@@ -36,6 +36,8 @@ CREATE TABLE `korisnik` (
   PRIMARY KEY (`id`),
   KEY `fk_osoba_idx` (`id_osoba`),
   KEY `fk_trener_idx` (`id_trener`),
+  CONSTRAINT `FK16tumlexce1107tnbcj8pmeie` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`),
+  CONSTRAINT `FK8dgc90helwfq6t89gi3pvixck` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`),
   CONSTRAINT `fk_osoba1` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_trener` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -91,6 +93,7 @@ CREATE TABLE `parametritreninga` (
   `datum` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_korisnik1_idx` (`id_korisnika`),
+  CONSTRAINT `FKnw979nyhllrqhlmvpwdkmwq6f` FOREIGN KEY (`id_korisnika`) REFERENCES `korisnik` (`id`),
   CONSTRAINT `fk_korisnik1` FOREIGN KEY (`id_korisnika`) REFERENCES `korisnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -119,6 +122,8 @@ CREATE TABLE `rejting` (
   PRIMARY KEY (`id`),
   KEY `fk_trener2_idx` (`id_trener`),
   KEY `fk_korisnik2_idx` (`id_korisnik`),
+  CONSTRAINT `FK1ri1y7j261ekdxmr5f7do5pmn` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`),
+  CONSTRAINT `FK7vapapos2mtc1kho3ar3w0053` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`),
   CONSTRAINT `fk_korisnik2` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_trener2` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -150,6 +155,7 @@ CREATE TABLE `trener` (
   `id_osoba` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_osoba_idx` (`id_osoba`),
+  CONSTRAINT `FKdfu9jjenxo5s140sia1ofcm8r` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`),
   CONSTRAINT `fk_osoba` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -172,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-28  9:16:50
+-- Dump completed on 2017-03-29  8:58:59

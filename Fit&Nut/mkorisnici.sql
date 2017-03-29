@@ -26,6 +26,7 @@ CREATE TABLE `administrator` (
   `id` int(11) NOT NULL,
   `idOsoba` int(11) NOT NULL,
   `id_osoba` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `idosoba_fk_idx` (`idOsoba`),
   KEY `FKl48dvb7decu0rbg3ksih0n498` (`id_osoba`),
   CONSTRAINT `FKl48dvb7decu0rbg3ksih0n498` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`),
@@ -39,7 +40,68 @@ CREATE TABLE `administrator` (
 
 LOCK TABLES `administrator` WRITE;
 /*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
+INSERT INTO `administrator` VALUES (1,1,NULL),(2,2,NULL);
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ishrana`
+--
+
+DROP TABLE IF EXISTS `ishrana`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ishrana` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dorucak` varchar(255) DEFAULT NULL,
+  `rucak` varchar(255) DEFAULT NULL,
+  `uzina1` varchar(255) DEFAULT NULL,
+  `uzina2` varchar(255) DEFAULT NULL,
+  `vecera` varchar(255) DEFAULT NULL,
+  `id_korisnik` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKnruqrwgislkp71wpoas48h8yn` (`id_korisnik`),
+  CONSTRAINT `FKnruqrwgislkp71wpoas48h8yn` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ishrana`
+--
+
+LOCK TABLES `ishrana` WRITE;
+/*!40000 ALTER TABLE `ishrana` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ishrana` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `komentari`
+--
+
+DROP TABLE IF EXISTS `komentari`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `komentari` (
+  `datum` date NOT NULL,
+  `id` int(11) NOT NULL,
+  `id_korisnik` int(11) NOT NULL,
+  `id_trener` int(11) NOT NULL,
+  `tekst` varchar(255) NOT NULL,
+  PRIMARY KEY (`datum`,`id`,`id_korisnik`,`id_trener`,`tekst`),
+  KEY `FKrsl0virliqtkx1jf9ck2p5yh1` (`id_korisnik`),
+  KEY `FKjvlhaj0ywhltol2g1coe26d0j` (`id_trener`),
+  CONSTRAINT `FKjvlhaj0ywhltol2g1coe26d0j` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`),
+  CONSTRAINT `FKrsl0virliqtkx1jf9ck2p5yh1` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `komentari`
+--
+
+LOCK TABLES `komentari` WRITE;
+/*!40000 ALTER TABLE `komentari` DISABLE KEYS */;
+/*!40000 ALTER TABLE `komentari` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -109,6 +171,7 @@ CREATE TABLE `osoba` (
 
 LOCK TABLES `osoba` WRITE;
 /*!40000 ALTER TABLE `osoba` DISABLE KEYS */;
+INSERT INTO `osoba` VALUES (1,'adna','tahic','user','pass','mail'),(2,'avad','tahic','user2','pass','mail2'),(3,'rabija','tahic','user3','pass','mail3'),(4,'eldar','kurtic','user4','pass','email4');
 /*!40000 ALTER TABLE `osoba` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +191,9 @@ CREATE TABLE `trener` (
   `brojKlijenata` int(11) DEFAULT NULL,
   `id_osoba` int(11) DEFAULT NULL,
   `broj_klijenata` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FKdfu9jjenxo5s140sia1ofcm8r` (`id_osoba`),
+  CONSTRAINT `FKdfu9jjenxo5s140sia1ofcm8r` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -140,6 +205,34 @@ LOCK TABLES `trener` WRITE;
 /*!40000 ALTER TABLE `trener` DISABLE KEYS */;
 /*!40000 ALTER TABLE `trener` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `trening`
+--
+
+DROP TABLE IF EXISTS `trening`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `trening` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `opis` varchar(255) DEFAULT NULL,
+  `trajanje` int(11) NOT NULL,
+  `vrsta` varchar(255) DEFAULT NULL,
+  `id_korisnik` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKrdckoj932br4l7n2jup1a8s1h` (`id_korisnik`),
+  CONSTRAINT `FKrdckoj932br4l7n2jup1a8s1h` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trening`
+--
+
+LOCK TABLES `trening` WRITE;
+/*!40000 ALTER TABLE `trening` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trening` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -150,4 +243,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-28  9:16:01
+-- Dump completed on 2017-03-29  8:58:10

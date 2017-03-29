@@ -32,6 +32,7 @@ CREATE TABLE `ishrana` (
   `id_korisnik` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_korisnik3_idx` (`id_korisnik`),
+  CONSTRAINT `FKnruqrwgislkp71wpoas48h8yn` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`),
   CONSTRAINT `fk_korisnik3` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -58,9 +59,11 @@ CREATE TABLE `komentari` (
   `id_korisnik` int(11) NOT NULL,
   `tekst` varchar(255) NOT NULL,
   `datum` date NOT NULL,
-  PRIMARY KEY (`id`,`id_trener`,`tekst`,`datum`,`id_korisnik`),
+  PRIMARY KEY (`id`),
   KEY `fk_trener_idx` (`id_trener`),
   KEY `fk_korisnik_idx` (`id_korisnik`),
+  CONSTRAINT `FKjvlhaj0ywhltol2g1coe26d0j` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`),
+  CONSTRAINT `FKrsl0virliqtkx1jf9ck2p5yh1` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`),
   CONSTRAINT `fk_korisnik` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_trener` FOREIGN KEY (`id_trener`) REFERENCES `trener` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -95,6 +98,7 @@ CREATE TABLE `korisnik` (
   `id_osoba` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_osoba_idx` (`id_osoba`),
+  CONSTRAINT `FK16tumlexce1107tnbcj8pmeie` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`),
   CONSTRAINT `fk_osoba` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -152,6 +156,7 @@ CREATE TABLE `trener` (
   `id_osoba` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fkosoba_idx` (`id_osoba`),
+  CONSTRAINT `FKdfu9jjenxo5s140sia1ofcm8r` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`),
   CONSTRAINT `fkosoba` FOREIGN KEY (`id_osoba`) REFERENCES `osoba` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -180,6 +185,7 @@ CREATE TABLE `trening` (
   `opis` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fkkorisnik1_idx` (`id_korisnik`),
+  CONSTRAINT `FKrdckoj932br4l7n2jup1a8s1h` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`),
   CONSTRAINT `fkkorisnik1` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -202,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-28  9:16:13
+-- Dump completed on 2017-03-29  8:58:24
