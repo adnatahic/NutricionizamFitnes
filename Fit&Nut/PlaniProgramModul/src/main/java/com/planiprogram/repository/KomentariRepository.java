@@ -1,4 +1,5 @@
-package com.korisnici.repository;
+package com.planiprogram.repository;
+
 
 import java.util.List;
 
@@ -10,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.korisnici.module.Osoba;
-import com.korisnici.module.Trener;
-@RepositoryRestResource(path="treneri",collectionResourceRel="treneri")
-public interface TrenerRepository extends PagingAndSortingRepository<Trener, Long>{
+import com.planiprogram.module.Komentari;
+
+@RepositoryRestResource(path="komentari",collectionResourceRel="komentari")
+public interface KomentariRepository extends PagingAndSortingRepository<Komentari, Long>{
 
 }

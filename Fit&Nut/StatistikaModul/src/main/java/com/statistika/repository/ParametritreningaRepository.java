@@ -1,4 +1,4 @@
-package com.korisnici.repository;
+package com.statistika.repository;
 
 import java.util.List;
 
@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.korisnici.module.Osoba;
-import com.korisnici.module.Trener;
-@RepositoryRestResource(path="treneri",collectionResourceRel="treneri")
-public interface TrenerRepository extends PagingAndSortingRepository<Trener, Long>{
+import com.statistika.module.Parametritreninga;
+import com.statistika.module.Rejting;
+
+@RepositoryRestResource(path="parametri",collectionResourceRel="parametri")
+public interface ParametritreningaRepository extends PagingAndSortingRepository<Parametritreninga, Long>{
 
 }

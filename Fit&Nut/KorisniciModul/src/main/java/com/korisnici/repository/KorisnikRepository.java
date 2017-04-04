@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.korisnici.module.Administrator;
 import com.korisnici.module.Korisnik;
-import com.sun.xml.bind.v2.model.core.ID;
-
 @RepositoryRestResource(path="korisnici",collectionResourceRel="korisnici")
 public interface KorisnikRepository extends PagingAndSortingRepository<Korisnik, Long>{
 

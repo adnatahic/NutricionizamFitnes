@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import com.korisnici.module.Administrator;
-import com.sun.xml.bind.v2.model.core.ID;
 
 @RepositoryRestResource(path="administratori",collectionResourceRel="administratori")
 public interface AdministratorRepository extends PagingAndSortingRepository<Administrator, Long>{
