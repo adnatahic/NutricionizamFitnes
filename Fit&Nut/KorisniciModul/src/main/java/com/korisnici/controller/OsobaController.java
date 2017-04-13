@@ -4,6 +4,8 @@ package com.korisnici.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -29,4 +31,34 @@ public class OsobaController {
 	    public Osoba vratiosobe(@RequestParam (value="id", defaultValue="1") Integer id) {
 	        return ((List<Osoba>) repo.findAll()).get(id-1);
 	    }
+	 
+	 @RequestMapping(value="/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", method=RequestMethod.GET)
+	  public ResponseEntity<Osoba> DodajOsobu(@PathVariable String ime, @PathVariable String prezime,@PathVariable String username,@PathVariable String password, @PathVariable String email ) {
+	    List<Osoba> osobe= (List<Osoba>) repo.findAll();
+	    
+	    int velicina= osobe.size();
+	    Osoba o = new Osoba();
+	    o.setId(50);
+	    o.setIme(ime);
+	    o.setPassword(password);
+	    o.setPrezime(prezime);
+	    o.setUsername(username);
+	    o.setEmail(email);
+	    repo.save(o);
+	    return new ResponseEntity("Uspješno kreirana osoba!" , HttpStatus.OK);
+	  }
+	 @RequestMapping(value="/osobe/izbrisi/{id}", method=RequestMethod.GET)
+	  public ResponseEntity<String> izbrisiOsobuId(@PathVariable Long id ) {
+	    List<Osoba> osobe= (List<Osoba>) repo.findAll();
+	    
+	    for(Osoba o: osobe)
+	    { 
+	    	if(o.getId()==id) 
+	    	{ 
+	    		repo.delete(id);
+	    		return new ResponseEntity("Uspješno izbrisana osoba sa id-em: " + id, HttpStatus.OK);
+	    	}
+	    }
+	    return new ResponseEntity("Nije pronađena osoba sa id-em : " + id, HttpStatus.NOT_FOUND);
+	  }
 }
