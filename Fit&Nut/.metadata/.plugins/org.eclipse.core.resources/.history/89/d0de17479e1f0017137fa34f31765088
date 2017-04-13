@@ -1,0 +1,11 @@
+
+spring.cloud.config.uri= http://localhost:8888
+spring.jpa.properties.hibernate.format_sql = true
+
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/mkorisnici
+spring.datasource.username=root
+spring.datasource.password=password
+spring.jpa.generate-ddl=true
+spring.application.name=korisnici
+spring.profiles.active=dev

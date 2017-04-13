@@ -1,0 +1,433 @@
+2017-04-11 11:07:21,794 [JavaFX Application Thread] ERROR o.e.m.c.i.p.r.ProjectRegistryReader - Can't read workspace state
+java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.BasicProjectRegistry; local class incompatible: stream classdesc serialVersionUID = 5542512601401896748, local class serialVersionUID = 6232274446642339434
+	at java.io.ObjectStreamClass.initNonProxy(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readNonProxyDesc(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readClassDesc(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readNonProxyDesc(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readClassDesc(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(Unknown Source) ~[na:1.8.0_121]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.readWorkspaceState(ProjectRegistryReader.java:100) ~[org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.<init>(ProjectRegistryManager.java:164) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.MavenPluginActivator.start(MavenPluginActivator.java:211) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_121]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.container.Module.start(Module.java:449) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161) [org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.8.0_121]
+	at java.lang.Class.getDeclaredConstructors0(Native Method) [na:1.8.0_121]
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source) [na:1.8.0_121]
+	at java.lang.Class.getConstructor0(Unknown Source) [na:1.8.0_121]
+	at java.lang.Class.newInstance(Unknown Source) [na:1.8.0_121]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:291) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:286) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardElement.createExecutableExtension(WorkbenchWizardElement.java:123) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardElement.createWizard(WorkbenchWizardElement.java:261) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.ImportExportPage$1.createWizard(ImportExportPage.java:299) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardNode$1$1.run(WorkbenchWizardNode.java:142) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.8.0.v20160509-1230.jar:na]
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardNode$1.run(WorkbenchWizardNode.java:124) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardNode.getWizard(WorkbenchWizardNode.java:120) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.jface.wizard.WizardSelectionPage.getNextPage(WizardSelectionPage.java:107) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardSelectionPage.getNextPage(WorkbenchWizardSelectionPage.java:98) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.ImportExportPage.getNextPage(ImportExportPage.java:427) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.ImportExportPage.treeDoubleClicked(ImportExportPage.java:232) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.dialogs.ImportPage$2.doubleClick(ImportPage.java:77) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:833) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.8.0.v20160509-1230.jar:na]
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:173) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.viewers.StructuredViewer.fireDoubleClick(StructuredViewer.java:830) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.viewers.AbstractTreeViewer.handleDoubleSelect(AbstractTreeViewer.java:1470) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetDefaultSelected(StructuredViewer.java:1264) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.util.OpenStrategy.fireDefaultSelectionEvent(OpenStrategy.java:252) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.util.OpenStrategy.access$0(OpenStrategy.java:249) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:311) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4236) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3824) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:818) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.window.Window.open(Window.java:794) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.ui.internal.handlers.WizardHandler$Import.executeHandler(WizardHandler.java:158) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:295) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_121]
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55) [org.eclipse.e4.core.di_1.6.1.v20160712-0927.jar:na]
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:282) [org.eclipse.e4.core.di_1.6.1.v20160712-0927.jar:na]
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:264) [org.eclipse.e4.core.di_1.6.1.v20160712-0927.jar:na]
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132) [org.eclipse.e4.core.contexts_1.5.0.v20160504-0909.jar:na]
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:152) [org.eclipse.e4.core.commands_0.11.100.v20160506-0804.jar:na]
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:494) [org.eclipse.core.commands_3.8.0.v20160316-1921.jar:na]
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:488) [org.eclipse.core.commands_3.8.0.v20160316-1921.jar:na]
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210) [org.eclipse.e4.core.commands_0.11.100.v20160506-0804.jar:na]
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:353) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:155) [org.eclipse.ui.workbench_3.108.2.v20161025-2029.jar:na]
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:565) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:397) [org.eclipse.jface_3.12.1.v20160923-1528.jar:na]
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4236) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3824) [org.eclipse.swt.win32.win32.x86_3.105.2.v20161122-0613.jar:na]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121) ~[na:na]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336) ~[na:na]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022) ~[na:na]
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150) ~[na:na]
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693) ~[na:na]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336) ~[na:na]
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610) ~[na:na]
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148) ~[na:na]
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138) ~[na:na]
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196) ~[org.eclipse.equinox.app_1.3.400.v20150715-1528.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134) ~[org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104) ~[org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388) ~[org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243) ~[org.eclipse.osgi_3.11.2.v20161107-1947.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_121]
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673) ~[org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar:na]
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610) ~[org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar:na]
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519) ~[org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar:na]
+2017-04-11 11:07:55,074 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:KorisniciModul-conServer:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\GitServerZaKonfiguraciju\pom.xml.
+2017-04-11 11:07:56,501 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\pom.xml.
+2017-04-11 11:07:56,866 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\pom.xml.
+2017-04-11 11:07:57,112 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\pom.xml.
+2017-04-11 11:07:58,745 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GitServerZaKonfiguraciju/src/main/java
+2017-04-11 11:07:58,746 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /GitServerZaKonfiguraciju/src/main/resources
+2017-04-11 11:07:58,775 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /GitServerZaKonfiguraciju/src/main/resources
+2017-04-11 11:07:58,783 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GitServerZaKonfiguraciju/src/test/java
+2017-04-11 11:08:03,081 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /StatistikaModul/src/main/java
+2017-04-11 11:08:03,081 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /StatistikaModul/src/main/resources
+2017-04-11 11:08:03,088 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /StatistikaModul/src/main/resources
+2017-04-11 11:08:03,095 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /StatistikaModul/src/test/java
+2017-04-11 11:08:03,374 [Worker-6] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 4 project(s) in 14 sec
+2017-04-11 11:08:06,587 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:06,592 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:08:06,614 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:08:06,618 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:06,618 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\GitServerZaKonfiguraciju\src\test\resources
+2017-04-11 11:08:08,415 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:08,422 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:08:08,434 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:08:08,444 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:08,444 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-11 11:08:09,605 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:09,607 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:08:09,607 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:08:09,612 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:09,612 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\GitServerZaKonfiguraciju\src\test\resources
+2017-04-11 11:08:10,364 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:10,365 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:08:10,370 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:08:10,397 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:10,397 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-11 11:08:11,671 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:11,672 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:08:11,692 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:08:11,734 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:08:11,747 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-11 11:09:48,289 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:09:48,289 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:09:48,297 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:09:48,307 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:09:48,307 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-11 11:10:21,738 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:10:21,739 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:10:21,739 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:10:21,742 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:10:21,749 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-11 11:12:18,315 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\pom.xml.
+2017-04-11 11:12:19,195 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /KorisniciModul/src/main/java
+2017-04-11 11:12:19,202 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /KorisniciModul/src/main/resources
+2017-04-11 11:12:19,217 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /KorisniciModul/src/main/resources
+2017-04-11 11:12:19,225 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /KorisniciModul/src/test/java
+2017-04-11 11:12:19,486 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2017-04-11 11:12:21,009 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:12:21,016 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:12:21,024 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:12:21,036 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:12:21,036 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-11 11:12:21,744 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:12:21,744 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:12:21,745 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:12:21,749 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:12:21,762 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-11 11:15:00,728 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\pom.xml.
+2017-04-11 11:15:01,709 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:15:01,710 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:15:01,719 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:15:01,724 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:15:01,724 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-11 11:18:30,369 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.planiprogram:PlaniProgramModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\pom.xml.
+2017-04-11 11:18:31,203 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PlaniProgramModul/src/main/java
+2017-04-11 11:18:31,204 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PlaniProgramModul/src/main/resources
+2017-04-11 11:18:31,219 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PlaniProgramModul/src/main/resources
+2017-04-11 11:18:31,231 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PlaniProgramModul/src/test/java
+2017-04-11 11:18:31,643 [Worker-1] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2017-04-11 11:18:33,398 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:18:33,399 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-11 11:18:33,407 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:18:33,422 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:18:33,432 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-11 11:19:02,826 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:19:02,827 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:19:02,836 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-11 11:19:02,848 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-11 11:19:02,856 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 09:44:48,739 [Worker-109] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.eureka:eureka:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\EurekaServer\pom.xml.
+2017-04-12 09:44:58,815 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EurekaServer/src/main/java
+2017-04-12 09:44:58,896 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EurekaServer/src/main/resources
+2017-04-12 09:44:58,928 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EurekaServer/src/main/resources
+2017-04-12 09:44:58,980 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EurekaServer/src/test/java
+2017-04-12 09:45:07,608 [Worker-109] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 25 sec
+2017-04-12 09:45:07,634 [Worker-109] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-04-12 09:45:08,334 [Worker-109] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.eureka:eureka:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\EurekaServer\pom.xml.
+2017-04-12 09:45:10,410 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EurekaServer/src/main/java
+2017-04-12 09:45:10,459 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EurekaServer/src/main/resources
+2017-04-12 09:45:10,468 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EurekaServer/src/main/resources
+2017-04-12 09:45:10,486 [Worker-109] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EurekaServer/src/test/java
+2017-04-12 09:45:11,224 [Worker-109] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2017-04-12 09:45:28,396 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 09:45:28,397 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 09:45:28,398 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 09:45:28,402 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 09:45:28,448 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\EurekaServer\src\test\resources
+2017-04-12 10:03:36,549 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 10:03:36,636 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 10:03:36,645 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 10:03:36,657 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 10:03:36,658 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\EurekaServer\src\test\resources
+2017-04-12 10:04:37,387 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 10:04:37,427 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 10:04:37,439 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 10:04:37,453 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 10:04:37,460 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\EurekaServer\src\test\resources
+2017-04-12 18:22:17,880 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:22:17,948 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:22:18,086 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:22:18,093 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:22:18,094 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:36:43,051 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:36:43,095 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:36:43,099 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:36:43,104 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:36:43,104 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:37:11,784 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:37:11,785 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:37:11,791 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:37:11,797 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:37:11,797 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:38:56,869 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:38:56,919 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:38:56,922 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:38:56,928 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:38:56,928 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:40:31,596 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\pom.xml.
+2017-04-12 18:40:44,366 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:40:44,367 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:40:44,368 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:40:44,419 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:40:44,419 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:40:53,153 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:40:53,155 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:40:53,369 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:40:53,381 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:40:53,388 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:41:33,401 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-04-12 18:41:34,743 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\pom.xml.
+2017-04-12 18:41:36,593 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /KorisniciModul/src/main/java
+2017-04-12 18:41:36,601 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /KorisniciModul/src/main/resources
+2017-04-12 18:41:36,608 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /KorisniciModul/src/main/resources
+2017-04-12 18:41:36,615 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /KorisniciModul/src/test/java
+2017-04-12 18:41:37,454 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 4 sec
+2017-04-12 18:41:40,819 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:41:40,820 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:41:40,842 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:41:40,853 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:41:40,860 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:42:59,215 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:42:59,288 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:42:59,305 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:42:59,326 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:42:59,326 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:45:48,846 [Worker-25] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.planiprogram:PlaniProgramModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\pom.xml.
+2017-04-12 18:45:50,804 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:45:50,805 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:45:50,828 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:45:50,833 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:45:50,833 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 18:45:53,704 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:45:53,706 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:45:53,795 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:45:53,801 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:45:53,813 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 18:46:11,696 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:46:11,737 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:46:11,746 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:46:11,755 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:46:11,755 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 18:46:49,263 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:46:49,265 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:46:49,268 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:46:49,272 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:46:49,272 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 18:48:34,168 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:48:34,169 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:48:34,172 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:48:34,259 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:48:34,260 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 18:49:47,649 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-04-12 18:49:48,285 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.planiprogram:PlaniProgramModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\pom.xml.
+2017-04-12 18:49:49,966 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PlaniProgramModul/src/main/java
+2017-04-12 18:49:49,972 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PlaniProgramModul/src/main/resources
+2017-04-12 18:49:49,979 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PlaniProgramModul/src/main/resources
+2017-04-12 18:49:49,980 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PlaniProgramModul/src/test/java
+2017-04-12 18:49:50,487 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2017-04-12 18:49:54,316 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:49:54,317 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:49:54,320 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:49:54,350 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:49:54,364 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 18:50:53,021 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:50:53,021 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:50:53,033 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:50:53,046 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:50:53,055 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 18:57:43,253 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:57:43,260 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:57:43,269 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:57:43,280 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:57:43,280 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\EurekaServer\src\test\resources
+2017-04-12 18:58:29,156 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:58:29,157 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 18:58:29,162 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 18:58:29,168 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 18:58:29,168 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-12 19:00:11,721 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:00:11,722 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:00:11,725 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:00:11,771 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:00:11,771 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 19:02:25,393 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:02:25,394 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:02:25,437 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:02:25,449 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:02:25,456 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:02:46,500 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:02:46,509 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:02:46,522 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:02:46,532 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:02:46,532 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-12 19:03:47,656 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:03:47,657 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:03:47,661 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:03:47,666 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:03:47,673 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:09:00,303 [Worker-34] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\pom.xml.
+2017-04-12 19:09:02,076 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:09:02,082 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:09:02,089 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:09:02,093 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:09:02,100 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:09:04,870 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:09:04,885 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:09:04,907 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:09:04,921 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:09:04,922 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:09:38,558 [Worker-31] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\pom.xml.
+2017-04-12 19:09:39,820 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:09:39,821 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:09:39,821 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:09:39,831 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:09:39,832 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:10:48,727 [Worker-39] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\pom.xml.
+2017-04-12 19:10:50,183 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:10:50,225 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:10:50,233 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:10:50,241 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:10:50,241 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:10:52,485 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:10:52,486 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:10:52,489 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:10:52,492 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:10:52,492 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-12 19:12:55,752 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:12:55,753 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-12 19:12:55,765 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-12 19:12:55,840 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-12 19:12:55,841 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 12:46:41,484 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 12:46:41,791 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 12:46:41,839 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 12:46:41,843 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 12:46:41,843 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 13:00:57,499 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 13:00:57,499 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 13:00:57,499 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 13:00:57,515 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 13:00:57,515 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 13:03:27,573 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 13:03:27,573 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 13:03:27,597 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 13:03:27,613 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 13:03:27,613 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-04-13 13:03:40,718 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 13:03:40,810 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 13:03:40,814 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 13:03:40,818 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 13:03:40,818 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-04-13 14:24:29,098 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:24:29,118 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 14:24:29,122 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 14:24:29,127 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:24:29,196 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 14:24:41,660 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:24:41,751 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 14:24:41,762 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 14:24:41,776 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:24:41,789 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 14:28:02,121 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:28:02,144 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 14:28:02,249 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 14:28:02,260 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:28:02,267 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 14:28:27,740 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:28:27,758 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 14:28:27,775 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 14:28:27,795 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:28:27,796 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-04-13 14:37:05,867 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:37:05,869 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-04-13 14:37:05,878 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-13 14:37:05,885 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-13 14:37:05,885 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_FITNUT\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources

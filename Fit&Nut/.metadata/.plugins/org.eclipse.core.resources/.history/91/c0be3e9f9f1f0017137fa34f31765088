@@ -1,0 +1,12 @@
+package com.planiprogram;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PlaniProgramModulApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PlaniProgramModulApplication.class, args);
+	}
+}
