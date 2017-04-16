@@ -1,3 +1,0 @@
-spring.application.name=planiprogrammodul
-spring.profiles.active=master
-spring.cloud.config.uri= http://localhost:8888

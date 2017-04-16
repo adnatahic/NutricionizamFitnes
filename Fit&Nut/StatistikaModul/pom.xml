@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.korisnici</groupId>
-	<artifactId>KorisniciModul</artifactId>
+	<groupId>com.statistika</groupId>
+	<artifactId>StatistikaModul</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>KorisniciModul</name>
+	<name>StatistikaModul</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -56,16 +56,17 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-		
+				
 		<dependency>
  		    <groupId>org.springframework.cloud</groupId>
  		    <artifactId>spring-cloud-starter-eureka</artifactId>
- 		    </dependency>
+ 		</dependency>	
  		
  		<dependency>
  		    <groupId>org.springframework.cloud</groupId>
  		    <artifactId>spring-cloud-starter-eureka-server</artifactId>
- 		    </dependency>	
+ 		</dependency>	
+		    
 	</dependencies>
 
 	<build>

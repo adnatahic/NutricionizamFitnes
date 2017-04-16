@@ -2,7 +2,6 @@ package com.korisnici.module;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -28,12 +27,12 @@ public class Korisnik implements Serializable {
 
 	private String spol;
 
-	private BigDecimal tezina;
+	private int tezina;
 
 	private int visina;
 
-	@Column(name="zeljena_tezina")
-	private BigDecimal zeljenaTezina;
+	@Column(name="zeljena_kilaza")
+	private int zeljenaKilaza;
 
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
@@ -88,11 +87,11 @@ public class Korisnik implements Serializable {
 		this.spol = spol;
 	}
 
-	public BigDecimal getTezina() {
+	public int getTezina() {
 		return this.tezina;
 	}
 
-	public void setTezina(BigDecimal tezina) {
+	public void setTezina(int tezina) {
 		this.tezina = tezina;
 	}
 
@@ -104,12 +103,12 @@ public class Korisnik implements Serializable {
 		this.visina = visina;
 	}
 
-	public BigDecimal getZeljenaTezina() {
-		return this.zeljenaTezina;
+	public int getZeljenaKilaza() {
+		return this.zeljenaKilaza;
 	}
 
-	public void setZeljenaTezina(BigDecimal zeljenaTezina) {
-		this.zeljenaTezina = zeljenaTezina;
+	public void setZeljenaKilaza(int zeljenaKilaza) {
+		this.zeljenaKilaza = zeljenaKilaza;
 	}
 
 	public Osoba getOsoba() {

@@ -29,12 +29,12 @@ public class Korisnik implements Serializable {
 
 	private String spol;
 
-	private BigDecimal tezina;
+	private Integer tezina;
 
-	private BigDecimal visina;
+	private Integer visina;
 
 	@Column(name="zeljena_kilaza")
-	private BigDecimal zeljenaKilaza;
+	private Integer zeljenaKilaza;
 
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
@@ -46,14 +46,7 @@ public class Korisnik implements Serializable {
 	@JoinColumn(name="id_trener")
 	private Trener trener;
 
-	//bi-directional many-to-one association to Parametritreninga
-	@OneToMany(mappedBy="korisnik")
-	private List<Parametritreninga> parametritreningas;
-
-	//bi-directional many-to-one association to Rejting
-	@OneToMany(mappedBy="korisnik")
-	private List<Rejting> rejtings;
-
+	
 	public Korisnik() {
 	}
 
@@ -97,27 +90,27 @@ public class Korisnik implements Serializable {
 		this.spol = spol;
 	}
 
-	public BigDecimal getTezina() {
+	public Integer getTezina() {
 		return this.tezina;
 	}
 
-	public void setTezina(BigDecimal tezina) {
+	public void setTezina(Integer tezina) {
 		this.tezina = tezina;
 	}
 
-	public BigDecimal getVisina() {
+	public Integer getVisina() {
 		return this.visina;
 	}
 
-	public void setVisina(BigDecimal visina) {
+	public void setVisina(Integer visina) {
 		this.visina = visina;
 	}
 
-	public BigDecimal getZeljenaKilaza() {
+	public Integer getZeljenaKilaza() {
 		return this.zeljenaKilaza;
 	}
 
-	public void setZeljenaKilaza(BigDecimal zeljenaKilaza) {
+	public void setZeljenaKilaza(Integer zeljenaKilaza) {
 		this.zeljenaKilaza = zeljenaKilaza;
 	}
 
@@ -137,48 +130,9 @@ public class Korisnik implements Serializable {
 		this.trener = trener;
 	}
 
-	public List<Parametritreninga> getParametritreningas() {
-		return this.parametritreningas;
-	}
+	
 
-	public void setParametritreningas(List<Parametritreninga> parametritreningas) {
-		this.parametritreningas = parametritreningas;
-	}
+	
 
-	public Parametritreninga addParametritreninga(Parametritreninga parametritreninga) {
-		getParametritreningas().add(parametritreninga);
-		parametritreninga.setKorisnik(this);
-
-		return parametritreninga;
-	}
-
-	public Parametritreninga removeParametritreninga(Parametritreninga parametritreninga) {
-		getParametritreningas().remove(parametritreninga);
-		parametritreninga.setKorisnik(null);
-
-		return parametritreninga;
-	}
-
-	public List<Rejting> getRejtings() {
-		return this.rejtings;
-	}
-
-	public void setRejtings(List<Rejting> rejtings) {
-		this.rejtings = rejtings;
-	}
-
-	public Rejting addRejting(Rejting rejting) {
-		getRejtings().add(rejting);
-		rejting.setKorisnik(this);
-
-		return rejting;
-	}
-
-	public Rejting removeRejting(Rejting rejting) {
-		getRejtings().remove(rejting);
-		rejting.setKorisnik(null);
-
-		return rejting;
-	}
-
+	
 }

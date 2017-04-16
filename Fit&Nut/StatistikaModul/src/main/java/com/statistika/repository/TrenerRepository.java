@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.statistika.module.Osoba;
 import com.statistika.module.Trener;
 @RepositoryRestResource(path="treneri",collectionResourceRel="treneri")
-public interface TrenerRepository extends PagingAndSortingRepository<Trener, Long>{
+public interface TrenerRepository extends PagingAndSortingRepository<Trener, Integer>{
 
 }

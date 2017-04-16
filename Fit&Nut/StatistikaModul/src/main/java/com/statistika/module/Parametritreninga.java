@@ -2,7 +2,6 @@ package com.statistika.module;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -21,7 +20,7 @@ public class Parametritreninga implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date datum;
 
-	private BigDecimal tezina;
+	private int tezina;
 
 	//bi-directional many-to-one association to Korisnik
 	@ManyToOne
@@ -47,11 +46,11 @@ public class Parametritreninga implements Serializable {
 		this.datum = datum;
 	}
 
-	public BigDecimal getTezina() {
+	public int getTezina() {
 		return this.tezina;
 	}
 
-	public void setTezina(BigDecimal tezina) {
+	public void setTezina(int tezina) {
 		this.tezina = tezina;
 	}
 

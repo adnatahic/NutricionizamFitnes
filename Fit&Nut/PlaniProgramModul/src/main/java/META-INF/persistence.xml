@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="KorisniciModul">
-		<class>com.korisnici.module.Ishrana</class>
-		<class>com.korisnici.module.Komentari</class>
-		<class>com.korisnici.module.Korisnik</class>
-		<class>com.korisnici.module.Osoba</class>
-		<class>com.korisnici.module.Trener</class>
-		<class>com.korisnici.module.Trening</class>
+		<class>com.planiprogram.module.Ishrana</class>
+		<class>com.planiprogram.module.Komentari</class>
+		<class>com.planiprogram.module.Korisnik</class>
+		<class>com.planiprogram.module.Osoba</class>
+		<class>com.planiprogram.module.Trener</class>
+		<class>com.planiprogram.module.Trening</class>
 	</persistence-unit>
 </persistence>

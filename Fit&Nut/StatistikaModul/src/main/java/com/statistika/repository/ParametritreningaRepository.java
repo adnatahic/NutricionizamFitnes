@@ -14,6 +14,6 @@ import com.statistika.module.Parametritreninga;
 import com.statistika.module.Rejting;
 
 @RepositoryRestResource(path="parametri",collectionResourceRel="parametri")
-public interface ParametritreningaRepository extends PagingAndSortingRepository<Parametritreninga, Long>{
+public interface ParametritreningaRepository extends PagingAndSortingRepository<Parametritreninga, Integer>{
 
 }

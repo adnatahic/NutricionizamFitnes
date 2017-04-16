@@ -17,24 +17,21 @@ public class Trener implements Serializable {
 	@Id
 	private int id;
 
-	@Column(name="broj_klijenata")
 	private int brojKlijenata;
-
 
 	private String edukacija;
 
 	private int godine;
 
-	@Column(name="id_osoba")
-	private int idOsoba;
-
 	private int iskustvo;
 
 	private String spol;
 
-	//bi-directional many-to-one association to Korisnik
-	@OneToMany(mappedBy="trener")
-	private List<Korisnik> korisniks;
+	
+	//bi-directional many-to-one association to Osoba
+	@ManyToOne
+	@JoinColumn(name="id_osoba")
+	private Osoba osoba;
 
 	public Trener() {
 	}
@@ -46,8 +43,6 @@ public class Trener implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	
 
 	public int getBrojKlijenata() {
 		return this.brojKlijenata;
@@ -73,14 +68,6 @@ public class Trener implements Serializable {
 		this.godine = godine;
 	}
 
-	public int getIdOsoba() {
-		return this.idOsoba;
-	}
-
-	public void setIdOsoba(int idOsoba) {
-		this.idOsoba = idOsoba;
-	}
-
 	public int getIskustvo() {
 		return this.iskustvo;
 	}
@@ -97,26 +84,14 @@ public class Trener implements Serializable {
 		this.spol = spol;
 	}
 
-	public List<Korisnik> getKorisniks() {
-		return this.korisniks;
+	
+
+	public Osoba getOsoba() {
+		return this.osoba;
 	}
 
-	public void setKorisniks(List<Korisnik> korisniks) {
-		this.korisniks = korisniks;
-	}
-
-	public Korisnik addKorisnik(Korisnik korisnik) {
-		getKorisniks().add(korisnik);
-		korisnik.setTrener(this);
-
-		return korisnik;
-	}
-
-	public Korisnik removeKorisnik(Korisnik korisnik) {
-		getKorisniks().remove(korisnik);
-		korisnik.setTrener(null);
-
-		return korisnik;
+	public void setOsoba(Osoba osoba) {
+		this.osoba = osoba;
 	}
 
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+ 
 @EnableDiscoveryClient
 @SpringBootApplication
 public class StatistikaModulApplication {
@@ -20,7 +20,6 @@ public class StatistikaModulApplication {
 		SpringApplication.run(StatistikaModulApplication.class, args);
 	}
 }
-
 @RestController
 class ServiceInstanceRestController {
 

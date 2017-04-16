@@ -14,6 +14,6 @@ import com.planiprogram.module.Osoba;
 import com.planiprogram.module.Trener;
 
 @RepositoryRestResource(path="treneri",collectionResourceRel="treneri")
-public interface TrenerRepository extends PagingAndSortingRepository<Trener, Long>{
+public interface TrenerRepository extends PagingAndSortingRepository<Trener, Integer>{
 
 }

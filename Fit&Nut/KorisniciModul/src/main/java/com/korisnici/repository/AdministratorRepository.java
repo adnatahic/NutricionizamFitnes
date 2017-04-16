@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.korisnici.module.Administrator;
 
 @RepositoryRestResource(path="administratori",collectionResourceRel="administratori")
-public interface AdministratorRepository extends PagingAndSortingRepository<Administrator, Long>{
+public interface AdministratorRepository extends PagingAndSortingRepository<Administrator, Integer>{
 
 }
 

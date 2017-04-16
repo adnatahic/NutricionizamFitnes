@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.planiprogram.module.Ishrana;
 
 @RepositoryRestResource(path="ishrana",collectionResourceRel="ishrana")
-public interface IshranaRepository extends PagingAndSortingRepository<Ishrana, Long>{
+public interface IshranaRepository extends PagingAndSortingRepository<Ishrana, Integer>{
 
 }

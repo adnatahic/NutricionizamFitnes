@@ -2,7 +2,6 @@ package com.planiprogram.module;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.Date;
 
 

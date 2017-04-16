@@ -14,15 +14,17 @@ import com.planiprogram.module.Trening;
 import com.planiprogram.repository.TreningRepository;
 
 @RestController
-@RequestMapping("/treninzi")
+@RequestMapping("/planiprogram")
 public class TreningController {
 	@Autowired
 	  private TreningRepository repo;
 	
-	@RequestMapping(method=RequestMethod.GET)
-	
+	@RequestMapping(value="/treninzi/svi",method=RequestMethod.GET)
 	  public List<Trening> getAll() {
 	    return (List<Trening>) repo.findAll();
 	  }
+	
+	
+	
 
 }

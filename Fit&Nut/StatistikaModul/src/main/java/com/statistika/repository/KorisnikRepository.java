@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.statistika.module.Korisnik;
 
 @RepositoryRestResource(path="korisnici",collectionResourceRel="korisnici")
-public interface KorisnikRepository extends PagingAndSortingRepository<Korisnik, Long>{
+public interface KorisnikRepository extends PagingAndSortingRepository<Korisnik, Integer>{
 
 }
 

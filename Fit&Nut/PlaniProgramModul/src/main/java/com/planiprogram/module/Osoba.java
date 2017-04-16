@@ -2,7 +2,6 @@ package com.planiprogram.module;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -28,14 +27,7 @@ public class Osoba implements Serializable {
 
 	private String username;
 
-	//bi-directional many-to-one association to Korisnik
-	@OneToMany(mappedBy="osoba")
-	private List<Korisnik> korisniks;
-
-	//bi-directional many-to-one association to Trener
-	@OneToMany(mappedBy="osoba")
-	private List<Trener> treners;
-
+	
 	public Osoba() {
 	}
 
@@ -87,48 +79,6 @@ public class Osoba implements Serializable {
 		this.username = username;
 	}
 
-	public List<Korisnik> getKorisniks() {
-		return this.korisniks;
-	}
-
-	public void setKorisniks(List<Korisnik> korisniks) {
-		this.korisniks = korisniks;
-	}
-
-	public Korisnik addKorisnik(Korisnik korisnik) {
-		getKorisniks().add(korisnik);
-		korisnik.setOsoba(this);
-
-		return korisnik;
-	}
-
-	public Korisnik removeKorisnik(Korisnik korisnik) {
-		getKorisniks().remove(korisnik);
-		korisnik.setOsoba(null);
-
-		return korisnik;
-	}
-
-	public List<Trener> getTreners() {
-		return this.treners;
-	}
-
-	public void setTreners(List<Trener> treners) {
-		this.treners = treners;
-	}
-
-	public Trener addTrener(Trener trener) {
-		getTreners().add(trener);
-		trener.setOsoba(this);
-
-		return trener;
-	}
-
-	public Trener removeTrener(Trener trener) {
-		getTreners().remove(trener);
-		trener.setOsoba(null);
-
-		return trener;
-	}
+	
 
 }

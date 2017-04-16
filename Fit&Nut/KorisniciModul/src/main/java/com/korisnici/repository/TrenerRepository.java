@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.korisnici.module.Osoba;
 import com.korisnici.module.Trener;
+
 @RepositoryRestResource(path="treneri",collectionResourceRel="treneri")
-public interface TrenerRepository extends PagingAndSortingRepository<Trener, Long>{
+public interface TrenerRepository extends PagingAndSortingRepository<Trener, Integer>{
 
 }

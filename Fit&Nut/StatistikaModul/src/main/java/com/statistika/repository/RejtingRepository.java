@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.statistika.module.Rejting;
 
 @RepositoryRestResource(path="rejting",collectionResourceRel="rejting")
-public interface RejtingRepository extends PagingAndSortingRepository<Rejting, Long>{
+public interface RejtingRepository extends PagingAndSortingRepository<Rejting, Integer>{
 
 }

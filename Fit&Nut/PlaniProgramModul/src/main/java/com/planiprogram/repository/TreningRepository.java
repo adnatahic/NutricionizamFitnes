@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.planiprogram.module.Trening;
 
 @RepositoryRestResource(path="treninzi",collectionResourceRel="treninzi")
-public interface TreningRepository extends PagingAndSortingRepository<Trening, Long>{
+public interface TreningRepository extends PagingAndSortingRepository<Trening, Integer>{
 
 }

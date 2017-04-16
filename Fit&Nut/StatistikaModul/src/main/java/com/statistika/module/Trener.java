@@ -28,14 +28,7 @@ public class Trener implements Serializable {
 
 	private String spol;
 
-	//bi-directional many-to-one association to Korisnik
-	@OneToMany(mappedBy="trener")
-	private List<Korisnik> korisniks;
-
-	//bi-directional many-to-one association to Rejting
-	@OneToMany(mappedBy="trener")
-	private List<Rejting> rejtings;
-
+	
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
 	@JoinColumn(name="id_osoba")
@@ -92,49 +85,7 @@ public class Trener implements Serializable {
 		this.spol = spol;
 	}
 
-	public List<Korisnik> getKorisniks() {
-		return this.korisniks;
-	}
-
-	public void setKorisniks(List<Korisnik> korisniks) {
-		this.korisniks = korisniks;
-	}
-
-	public Korisnik addKorisnik(Korisnik korisnik) {
-		getKorisniks().add(korisnik);
-		korisnik.setTrener(this);
-
-		return korisnik;
-	}
-
-	public Korisnik removeKorisnik(Korisnik korisnik) {
-		getKorisniks().remove(korisnik);
-		korisnik.setTrener(null);
-
-		return korisnik;
-	}
-
-	public List<Rejting> getRejtings() {
-		return this.rejtings;
-	}
-
-	public void setRejtings(List<Rejting> rejtings) {
-		this.rejtings = rejtings;
-	}
-
-	public Rejting addRejting(Rejting rejting) {
-		getRejtings().add(rejting);
-		rejting.setTrener(this);
-
-		return rejting;
-	}
-
-	public Rejting removeRejting(Rejting rejting) {
-		getRejtings().remove(rejting);
-		rejting.setTrener(null);
-
-		return rejting;
-	}
+	
 
 	public Osoba getOsoba() {
 		return this.osoba;

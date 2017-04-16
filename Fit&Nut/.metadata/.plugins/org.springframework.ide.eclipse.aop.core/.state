@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="GitServerZaKonfiguraciju"/>
 <aop-project name="PlaniProgramModul"/>
 <aop-project name="KorisniciModul"/>
 <aop-project name="EurekaServer"/>
-<aop-project name="StatistikaModul"/>
 </aop-reference-model>

@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.korisnici.module.Osoba;
 
 @RepositoryRestResource(path="osobe",collectionResourceRel="osobe")
-public interface OsobaRepository extends PagingAndSortingRepository<Osoba, Long>{
-	
-	
-	 
+public interface OsobaRepository extends PagingAndSortingRepository<Osoba, Integer>{
 
 }
 

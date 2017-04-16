@@ -2,7 +2,6 @@ package com.planiprogram.module;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -29,9 +28,7 @@ public class Trener implements Serializable {
 
 	private String spol;
 
-	//bi-directional many-to-one association to Komentari
-	@OneToMany(mappedBy="trener")
-	private List<Komentari> komentaris;
+	
 
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
@@ -89,27 +86,10 @@ public class Trener implements Serializable {
 		this.spol = spol;
 	}
 
-	public List<Komentari> getKomentaris() {
-		return this.komentaris;
-	}
+	
 
-	public void setKomentaris(List<Komentari> komentaris) {
-		this.komentaris = komentaris;
-	}
 
-	public Komentari addKomentari(Komentari komentari) {
-		getKomentaris().add(komentari);
-		komentari.setTrener(this);
 
-		return komentari;
-	}
-
-	public Komentari removeKomentari(Komentari komentari) {
-		getKomentaris().remove(komentari);
-		komentari.setTrener(null);
-
-		return komentari;
-	}
 
 	public Osoba getOsoba() {
 		return this.osoba;

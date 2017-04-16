@@ -2,7 +2,6 @@ package com.planiprogram.module;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -28,34 +27,25 @@ public class Korisnik implements Serializable {
 
 	private int godine;
 
-	@Column(name="id_trener")
-	private int idTrener;
-
 	private String spol;
 
-	private BigDecimal tezina;
+	private Integer tezina;
 
-	private BigDecimal visina;
+	private Integer visina;
 
 	@Column(name="zeljena_tezina")
-	private BigDecimal zeljenaTezina;
+	private Integer zeljenaTezina;
 
-	//bi-directional many-to-one association to Ishrana
-	@OneToMany(mappedBy="korisnik")
-	private List<Ishrana> ishranas;
-
-	//bi-directional many-to-one association to Komentari
-	@OneToMany(mappedBy="korisnik")
-	private List<Komentari> komentaris;
-
+	
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
 	@JoinColumn(name="id_osoba")
 	private Osoba osoba;
 
-	//bi-directional many-to-one association to Trening
-	@OneToMany(mappedBy="korisnik")
-	private List<Trening> trenings;
+	//bi-directional many-to-one association to Trener
+	@ManyToOne
+	@JoinColumn(name="id_trener")
+	private Trener trener;
 
 	public Korisnik() {
 	}
@@ -92,14 +82,6 @@ public class Korisnik implements Serializable {
 		this.godine = godine;
 	}
 
-	public int getIdTrener() {
-		return this.idTrener;
-	}
-
-	public void setIdTrener(int idTrener) {
-		this.idTrener = idTrener;
-	}
-
 	public String getSpol() {
 		return this.spol;
 	}
@@ -108,73 +90,31 @@ public class Korisnik implements Serializable {
 		this.spol = spol;
 	}
 
-	public BigDecimal getTezina() {
+	public Integer getTezina() {
 		return this.tezina;
 	}
 
-	public void setTezina(BigDecimal tezina) {
+	public void setTezina(Integer tezina) {
 		this.tezina = tezina;
 	}
 
-	public BigDecimal getVisina() {
+	public Integer getVisina() {
 		return this.visina;
 	}
 
-	public void setVisina(BigDecimal visina) {
+	public void setVisina(Integer visina) {
 		this.visina = visina;
 	}
 
-	public BigDecimal getZeljenaTezina() {
+	public Integer getZeljenaTezina() {
 		return this.zeljenaTezina;
 	}
 
-	public void setZeljenaTezina(BigDecimal zeljenaTezina) {
+	public void setZeljenaTezina(Integer zeljenaTezina) {
 		this.zeljenaTezina = zeljenaTezina;
 	}
 
-	public List<Ishrana> getIshranas() {
-		return this.ishranas;
-	}
 
-	public void setIshranas(List<Ishrana> ishranas) {
-		this.ishranas = ishranas;
-	}
-
-	public Ishrana addIshrana(Ishrana ishrana) {
-		getIshranas().add(ishrana);
-		ishrana.setKorisnik(this);
-
-		return ishrana;
-	}
-
-	public Ishrana removeIshrana(Ishrana ishrana) {
-		getIshranas().remove(ishrana);
-		ishrana.setKorisnik(null);
-
-		return ishrana;
-	}
-
-	public List<Komentari> getKomentaris() {
-		return this.komentaris;
-	}
-
-	public void setKomentaris(List<Komentari> komentaris) {
-		this.komentaris = komentaris;
-	}
-
-	public Komentari addKomentari(Komentari komentari) {
-		getKomentaris().add(komentari);
-		komentari.setKorisnik(this);
-
-		return komentari;
-	}
-
-	public Komentari removeKomentari(Komentari komentari) {
-		getKomentaris().remove(komentari);
-		komentari.setKorisnik(null);
-
-		return komentari;
-	}
 
 	public Osoba getOsoba() {
 		return this.osoba;
@@ -184,26 +124,12 @@ public class Korisnik implements Serializable {
 		this.osoba = osoba;
 	}
 
-	public List<Trening> getTrenings() {
-		return this.trenings;
+	public Trener getTrener() {
+		return this.trener;
 	}
 
-	public void setTrenings(List<Trening> trenings) {
-		this.trenings = trenings;
-	}
-
-	public Trening addTrening(Trening trening) {
-		getTrenings().add(trening);
-		trening.setKorisnik(this);
-
-		return trening;
-	}
-
-	public Trening removeTrening(Trening trening) {
-		getTrenings().remove(trening);
-		trening.setKorisnik(null);
-
-		return trening;
+	public void setTrener(Trener trener) {
+		this.trener = trener;
 	}
 
 }

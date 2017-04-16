@@ -20,7 +20,7 @@ public class Trening implements Serializable {
 
 	private int trajanje;
 
-	private String vrsta;
+	private String vrsta;	
 
 	//bi-directional many-to-one association to Korisnik
 	@ManyToOne

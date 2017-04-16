@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.planiprogram.module.Komentari;
 
 @RepositoryRestResource(path="komentari",collectionResourceRel="komentari")
-public interface KomentariRepository extends PagingAndSortingRepository<Komentari, Long>{
+public interface KomentariRepository extends PagingAndSortingRepository<Komentari, Integer>{
 
 }
