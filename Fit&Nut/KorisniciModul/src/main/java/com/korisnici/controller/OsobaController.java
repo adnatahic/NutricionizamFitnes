@@ -14,11 +14,14 @@ import java.util.Map;
 
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -32,6 +35,8 @@ import com.korisnici.repository.OsobaRepository;
 
 import org.json.JSONObject;
 
+@SpringBootApplication
+@EnableAutoConfiguration
 @RestController
 @RequestMapping("/korisnici")
 public class OsobaController {
@@ -45,6 +50,7 @@ public class OsobaController {
 		return new RestTemplate();
 	}
 	
+	@Secured("ADMIN")
 	@RequestMapping(value="/osobe/svi", method=RequestMethod.GET)
 	
 	  public List<Osoba> VratiSveOsobe() {
