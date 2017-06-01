@@ -31,8 +31,8 @@
 		<item value="org.eclipse.emf:2.12.0.v20160526-0356"/>
 		<item value="org.eclipse.epp.mpc:1.5.3.v20161116-1851"/>
 		<item value="org.eclipse.gef:3.11.0.201606061308"/>
-		<item value="org.eclipse.help:2.2.1.v20161124-1400"/>
-		<item value="org.eclipse.jdt:3.12.2.v20161124-1400"/>
+		<item value="org.eclipse.help:2.2.2.v20170301-0400"/>
+		<item value="org.eclipse.jdt:3.12.3.v20170301-0400"/>
 		<item value="org.eclipse.jgit:4.5.0.201609210915-r"/>
 		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.8.0.v201603091933"/>
 		<item value="org.eclipse.jst.enterprise_ui.feature:3.8.0.v201605251556"/>
@@ -63,8 +63,8 @@
 		<item value="org.eclipse.oomph.setup.core:1.6.0.v20161128-0928"/>
 		<item value="org.eclipse.oomph.setup:1.6.0.v20161128-0928"/>
 		<item value="org.eclipse.pde:3.12.2.v20161124-1400"/>
-		<item value="org.eclipse.platform:4.6.2.v20161124-1529"/>
-		<item value="org.eclipse.rcp:4.6.2.v20161124-1400"/>
+		<item value="org.eclipse.platform:4.6.3.v20170301-0400"/>
+		<item value="org.eclipse.rcp:4.6.3.v20170301-0400"/>
 		<item value="org.eclipse.recommenders.mylyn.rcp.feature:2.4.5.v20161130-1427"/>
 		<item value="org.eclipse.recommenders.rcp.feature:2.4.5.v20161130-1427"/>
 		<item value="org.eclipse.rse.core:3.7.2.201610260947"/>

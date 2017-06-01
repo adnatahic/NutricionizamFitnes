@@ -9,6 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import com.korisnici.security.TokenAuthenticationService;
 
 public class JWTAuthenticationFilter extends GenericFilterBean {
 
@@ -17,7 +18,7 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
              ServletResponse response,
              FilterChain filterChain)
       throws IOException, ServletException {
-    Authentication authentication = TokenAuthenticatioService
+    Authentication authentication = TokenAuthenticationService
         .getAuthentication((HttpServletRequest)request);
 
     SecurityContextHolder.getContext()

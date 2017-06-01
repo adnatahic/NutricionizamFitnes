@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.planiprogram.module.Osoba;
 
 @RepositoryRestResource(path="osobe",collectionResourceRel="osobe")
-public interface OsobaRepository extends PagingAndSortingRepository<Osoba, Integer>{
-
-}
+	public interface OsobaRepository extends PagingAndSortingRepository<Osoba, Integer>{
+		Osoba findByUsername(String username);
+	}
 
 	

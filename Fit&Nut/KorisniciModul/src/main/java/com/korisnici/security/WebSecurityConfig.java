@@ -14,11 +14,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.csrf().disable().authorizeRequests()
-    			.antMatchers("/osobe/").hasRole("ADMIN")
-    			.antMatchers("/administrator/*").hasRole("ADMIN")
-    			.antMatchers("/korisnik/*").hasRole("ADMIN")
-    		 	.antMatchers("/treneri/*").hasRole("ADMIN")
-    		 	.antMatchers("/").permitAll()
+        .antMatchers("/").permitAll()
         .antMatchers(HttpMethod.POST, "/login").permitAll()
         .anyRequest().authenticated()
         .and()
@@ -37,15 +33,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .withUser("admin")
         .password("password")
         .roles("ADMIN");
-    
     auth.inMemoryAuthentication()
-    .withUser("trener")
-    .password("trener")
-    .roles("TRENER");
-    
+	    .withUser("korisnik")
+	    .password("password")
+	    .roles("KORISNIK");
     auth.inMemoryAuthentication()
-    .withUser("korisnik")
-    .password("korisnik")
-    .roles("KORISNIK");
+	    .withUser("trener")
+	    .password("password")
+	    .roles("TRENER");
   }
 }
