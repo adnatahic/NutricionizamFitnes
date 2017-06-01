@@ -31,8 +31,8 @@ public class Korisnik implements Serializable {
 
 	private int visina;
 
-	@Column(name="zeljena_kilaza")
-	private int zeljenaKilaza;
+	@Column(name="zeljena_tezina")
+	private int zeljenaTezina;
 
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
@@ -104,11 +104,11 @@ public class Korisnik implements Serializable {
 	}
 
 	public int getZeljenaKilaza() {
-		return this.zeljenaKilaza;
+		return this.zeljenaTezina;
 	}
 
 	public void setZeljenaKilaza(int zeljenaKilaza) {
-		this.zeljenaKilaza = zeljenaKilaza;
+		this.zeljenaTezina = zeljenaKilaza;
 	}
 
 	public Osoba getOsoba() {

@@ -18,7 +18,7 @@ public class Administrator implements Serializable {
 
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
-	@JoinColumn(name="idOsoba")
+	@JoinColumn(name="id_osoba")
 	private Osoba osoba;
 
 	public Administrator() {

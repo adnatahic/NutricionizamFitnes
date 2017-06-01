@@ -14,7 +14,7 @@ import com.korisnici.module.Osoba;
 
 @RepositoryRestResource(path="osobe",collectionResourceRel="osobe")
 public interface OsobaRepository extends PagingAndSortingRepository<Osoba, Integer>{
-
+	Osoba findByUsername(String username);
 }
 
 	

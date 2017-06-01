@@ -30,7 +30,7 @@ public class Trener implements Serializable {
 	
 	//bi-directional many-to-one association to Osoba
 	@ManyToOne
-	@JoinColumn(name="id_osoba")
+	@JoinColumn(name="idOsoba")
 	private Osoba osoba;
 
 	public Trener() {
