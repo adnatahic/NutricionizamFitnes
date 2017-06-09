@@ -1,0 +1,36 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Edit user</h2>
+        </div><!--end modal header-->
+        <div class="modal-body">
+            <div class="container-fluid">
+                <ng-form class="panel-body">
+                    <p>ID: </p>
+                    <input type="text" name="id" class="form-control" ng-model="odabrani.id" placeholder="ID" />
+                    <br />
+                    <p>Godine: </p>
+                    <input type="text" name="godine" class="form-control" ng-model="odabrani.godine" placeholder="Godine" />
+                    <br />
+                    <p>Tezina: </p>
+                    <input type="text" name="tezina" class="form-control" ng-model="odabrani.tezina" placeholder="Tezina" />
+                    <br />
+                    <p>Visina: </p>
+                    <input type="text" name="visina" class="form-control" ng-model="odabrani.visina" placeholder="Visina" />
+                    <br />
+                    <p>Zeljena kilaza: </p>
+                    <input type="text" name="zeljenaKilaza" class="form-control" ng-model="odabrani.zeljenaKilaza" placeholder="Zeljena kilaza" />
+                    <br />
+                    <p>Datum pristupa: </p>
+                    <input type="text" name="datumPristupa" class="form-control" ng-model="odabrani.datumPristupa" placeholder="Datum pristupa" />
+                    <br />
+                    </ng-form>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="editujKorisnika()">Edit</button>
+            <button class="btn btn-default" data-dismiss="modal" ng-click="otkazi()">Cancel</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

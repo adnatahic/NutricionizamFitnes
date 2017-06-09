@@ -1,0 +1,241 @@
+﻿/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+/* Basic Styles */
+body {
+	background-color: #ece8e5;
+}
+nav {
+	height: 40px;
+	width: 100%;
+	background: #455868;
+	font-size: 11pt;
+	font-family: 'PT Sans', Arial, sans-serif;
+	font-weight: bold;
+	position: relative;
+	border-bottom: 2px solid #283744;
+}
+nav ul {
+	padding: 0;
+	margin: 0 auto;
+	width: 600px;
+	height: 40px;
+}
+nav li {
+	display: inline;
+	float: left;
+}
+nav a {
+	color: #fff;
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	text-shadow: 1px 1px 0px #283744;
+}
+nav li a {
+	border-right: 1px solid #576979;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+nav li:last-child a {
+	border-right: 0;
+}
+nav a:hover, nav a:active {
+	background-color: #8c99a4;
+}
+nav a#pull {
+	display: none;
+}
+
+/*Styles for screen 600px and lower*/
+@media screen and (max-width: 600px) {
+	nav { 
+  		height: auto;
+  	}
+  	nav ul {
+  		width: 100%;
+  		display: block;
+  		height: auto;
+  	}
+  	nav li {
+  		width: 50%;
+  		float: left;
+  		position: relative;
+  	}
+  	nav li a {
+		border-bottom: 1px solid #576979;
+		border-right: 1px solid #576979;
+	}
+  	nav a {
+	  	text-align: left;
+	  	width: 100%;
+	  	text-indent: 25px;
+  	}
+}
+
+/*Styles for screen 515px and lower*/
+@media only screen and (max-width : 480px) {
+	nav {
+		border-bottom: 0;
+	}
+	nav ul {
+		display: none;
+		height: auto;
+	}
+	nav a#pull {
+		display: block;
+		background-color: #283744;
+		width: 100%;
+		position: relative;
+	}
+	nav a#pull:after {
+		content:"";
+		background: url('http://media02.hongkiat.com/responsive-web-nav/demo/nav-icon.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 10px;
+	}
+}
+
+/*Smartphone*/
+@media only screen and (max-width : 320px) {
+	nav li {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	nav li a {
+		border-bottom: 1px solid #576979;
+	}
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #ece8e5;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #ece8e5;
+    color: white;
+}
+
+.banner {
+    top: -45px;
+    position: relative;
+}
+
+.banner .label {
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    margin-top: -38px;
+    right: 0;
+    text-transform: uppercase;
+}
+
+
+.banner .label .title {
+    font-size: 30px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.banner .label .price span {
+    display: block;
+    font-size: 24px;
+    padding-top: 3px;
+}
+
+.banner a {
+    font-size: 14px;
+    line-height: 20px;
+    color: #c73430;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #e5e5e5;
+    padding: 5px 18px 4px;
+    margin-top: 25px;
+    border-radius: 13px;
+}
+
+.banner a:hover {
+    background-color: #c73430;
+    color: #fff;
+}

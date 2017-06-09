@@ -1,0 +1,33 @@
+﻿<div>   
+    <div class="container">
+        <div class="featured-block">
+            <br />
+            <h2><i class="fa fa-cogs"></i> Treneri</h2>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-3" ng-repeat="trener in treneri">
+                    <div class="grid_4">
+                        <div class="banner">
+                            <img style="height:300px;width:auto" src="http://www.trainerize.com/_images/Trainer.png" alt="">
+                            <p class="label">
+                                <p>{{trener.edukacija}}</p>
+                                <p>{{trener.iskustvo}} godina iskustva</p>
+                                <p>Ukupno {{trener.brojKlijenata}} zadovoljnih klijenata</p>
+                                <div class="price">Rejting:  {{trener.rejting}}  <i class="fa fa-star"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="ruler"></div>
+</div>
+
+<div id="podaciOKorisniku" class="modal fade" role="dialog">
+    <div ng-include="'korisnici/podaciOKorisniku.html'"></div>
+</div>
+</div>

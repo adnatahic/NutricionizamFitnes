@@ -1,0 +1,35 @@
+﻿<div>
+    <div class="container">
+        <div class="featured-block">
+            <br />
+            <h2><i class="fa fa-th-list"></i> Korisnici</h2>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-3" ng-repeat="korisnik in korisnici">
+                    <div class="block">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <i class="fa fa-female fa-5x" style="padding-left:38%" ng-show="korisnik.spol === 'zenski'"></i>
+                                <i class="fa fa-male fa-5x" style="padding-left:38%" ng-show="korisnik.spol === 'muski'"></i>
+                                <h1>Godine: {{korisnik.godine}}</h1>
+                                <p>Tezina: {{korisnik.tezina}}</p>
+                                <p>Visina: {{korisnik.visina}}</p>
+                                <p>Zeljena kilaza: {{korisnik.zeljenaKilaza}}</p>
+                                <p>Datum pristupa: {{korisnik.datumPristupa| date:'dd.MM.yyyy'}}</p>
+                                <a class="btn" data-toggle="modal" data-target="#podaciOKorisniku" ng-click="selektuj(korisnik)">Edituj korisnika</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="ruler"></div>
+    </div>
+
+    <div id="podaciOKorisniku" class="modal fade" role="dialog">
+        <div ng-include="'korisnici/podaciOKorisniku.html'"></div>
+    </div>
+</div>
