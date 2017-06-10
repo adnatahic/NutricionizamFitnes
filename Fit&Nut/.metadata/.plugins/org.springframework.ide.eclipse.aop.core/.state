@@ -4,7 +4,5 @@
 <aop-project name="PlaniProgramModul"/>
 <aop-project name="Eureka-Server"/>
 <aop-project name="KorisniciModul"/>
-<aop-project name="Security"/>
-<aop-project name="EurekaServer"/>
 <aop-project name="StatistikaModul"/>
 </aop-reference-model>

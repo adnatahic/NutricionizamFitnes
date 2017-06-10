@@ -25,14 +25,30 @@
 
 </head>
 <body>
-    <nav class="clearfix">
-        <ul class="clearfix">
-            <li><a href="#">Pocetna</a></li>
-            <li><a href="#/korisnici">Korisnici</a></li>
-            <li><a href="#/treneri">Treneri</a></li>
-        </ul>
-        <a href="#" id="pull">Menu</a>
-    </nav>
-    <div ng-view></div>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Prijava</h2>
+            </div><!--end modal header-->
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <ng-form class="panel-body">
+                        <p>Korisničko ime: </p>
+                        <input type="text" name="id" class="form-control" ng-model="korisnicko ime" placeholder="korisničko ime" />
+                        <br />
+                        <p>Lozinka: </p>
+                        <input type="text" name="godine" class="form-control" ng-model="lozinka" placeholder="lozinka" />
+                        <br />
+                    </ng-form>
+                </div>
+            </div><!--end modal body-->
+            <div class="modal-footer bg-info">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="login()">Prijavi se</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="registracija()">Registruj se</button>
+            </div><!--end modal footer-->
+        </div><!--end modal content-->
+    </div><!--end modal dialog-->
+
 </body>
 </html>
