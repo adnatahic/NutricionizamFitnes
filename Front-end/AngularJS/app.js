@@ -13,11 +13,16 @@
                 templateUrl: "treneri/treneri.html",
                 controller: "treneriCtrl"
             })
-            .when("/treneri",
+            .when("/login",
             {
-                templateUrl: "treneri/treneri.html",
-                controller: "treneriCtrl"
+                templateUrl: "login/login.html",
+                controller: "loginCtrl"
             })
-            .otherwise({ redirectTo: "/index.html" });
+            .when("/registracija",
+            {
+                templateUrl: "registracija/registracija.html",
+                controller: "registracijaCtrl"
+            })
+            .otherwise({ redirectTo: "/login" });
     });
 }());

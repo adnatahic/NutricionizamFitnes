@@ -29,7 +29,7 @@
         }
         //TODO
         $scope.editujKorisnika = function (korisnik) {
-            userService.post("svi", korisnik, korisnik.id, 
+            treneriServis.post("svi", korisnik, korisnik.id,
                 function (data) {
                     if (data) {
                         $scope.korisnici = data;
@@ -40,10 +40,10 @@
             $scope.odabrani = null;
         }
         $scope.dajSveKorisnike = function () {
-            userService.list("svi",
+            treneriServis.list("svi",
                 function (data) {
                     if (data) {
-                        $scope.korisnici = data;
+                        $scope.treneri = data;
                     }
                 });
         };

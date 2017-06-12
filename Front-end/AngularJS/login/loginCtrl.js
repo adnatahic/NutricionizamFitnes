@@ -1,24 +1,19 @@
-﻿var app = angular.module('NutricionizamFitnes');
+﻿(function () {
+    var NutricionizamFitnes = angular.module('NutricionizamFitnes');
 
-app.controller('loginCtrl', ['$window', '$scope', '$http', function ($window, $scope, $http) {
-    $scope.message = "";
-    $scope.login = function () {
-        //alert($scope.username + " " + $scope.password);
-        $http({
-            method: 'POST',
-            url: '/login',
-            contentType: "application/json",
-            data: angular.toJson({ username: $scope.username, password: $scope.password }, true)
+    NutricionizamFitnes.controller('loginCtrl', ['$scope', 'loginServis', function ($scope, loginServis) {
 
-        }).success(function (data) {
-            console.log(data);
-            $scope.message = data;
-            $window.location.href = '/korisnici/index.html';
-        }).error(function (error) {
-            console.log(error);
-            alert("Pogresan username i/ili password!");
-        });
+        $scope.loginCredentials =
+        {
+            username: "",
+            password: ""
+        };
 
-    };
+        $scope.logIn = function () {
 
-}]);
+           
+
+            
+        }
+    }]);
+}());
