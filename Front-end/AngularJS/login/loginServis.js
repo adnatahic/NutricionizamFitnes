@@ -1,20 +1,19 @@
-﻿(function () {
+﻿
+
+(function () {
 
     var NutricionizamFitnes = angular.module("NutricionizamFitnes");
 
     NutricionizamFitnes.factory("loginServis", function ($http, $rootScope) {
 
-        var source = "http://localhost:8081/korisnici/osobe/";
+        var source = "http://localhost:8081/";
 
         return {
 
             list: function (dataSet, callback) {
                 $http.get(source + dataSet)
                      .success(function (data) {
-                         if (data)
-                         {
-                             $scope.
-                         }
+                        
                          return callback(data);
                      })
                      .error(function (error) {

@@ -1,5 +1,5 @@
 ﻿(function () {
-    var NutricionizamFitnes = angular.module('NutricionizamFitnes', ['ngRoute']);
+    var NutricionizamFitnes = angular.module('NutricionizamFitnes', ['ngStorage','ngRoute']);
 
     NutricionizamFitnes.config(function ($routeProvider) {
         $routeProvider
@@ -24,5 +24,7 @@
                 controller: "registracijaCtrl"
             })
             .otherwise({ redirectTo: "/login" });
+
+       
     });
 }());
