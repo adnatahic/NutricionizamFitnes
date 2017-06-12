@@ -22,22 +22,25 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.korisnici.module.Osoba;
+import com.korisnici.module.Trener;
 import com.korisnici.repository.OsobaRepository;
 
 import org.json.JSONObject;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@RestController
+@Controller
 @RequestMapping("/korisnici")
 public class OsobaController {
 	@Autowired
@@ -50,13 +53,10 @@ public class OsobaController {
 		return new RestTemplate();
 	}
 	
-	@Secured("ADMIN")
+
 	@RequestMapping(value="/osobe/svi", method=RequestMethod.GET)
-	
 	  public List<Osoba> VratiSveOsobe() {
 	    return (List<Osoba>) repo.findAll();
-	    
-	   
 	  }
 	
 	@RequestMapping(value="/osobe/{id}", method=RequestMethod.GET)
@@ -104,7 +104,7 @@ public class OsobaController {
 	    
 	    return new ResponseEntity("No User found with username " + username, HttpStatus.NOT_FOUND);
 	  }
-	
+		
 	
 	@RequestMapping(value="/osobe/login/{username}/{pass}", method=RequestMethod.GET)
 	  public ResponseEntity<Osoba> LoginUsernamePass(@PathVariable String username, @PathVariable String pass ) {

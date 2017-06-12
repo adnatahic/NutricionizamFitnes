@@ -53,7 +53,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         
         for(int i = 0; i < admini.size(); i++)
         {
-        	if(admini.get(i).getId() == idOsobe) 
+        	if(admini.get(i).getOsoba().getId() == idOsobe) 
         	{
         		System.out.println("ADMIN");
         		grantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
@@ -63,17 +63,17 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         
         for(int i = 0; i < korisnici.size(); i++)
         {
-        	if(korisnici.get(i).getId() == idOsobe)
+        	if(korisnici.get(i).getOsoba().getId() == idOsobe)
         	{
         		System.out.println("KORISNIK");
-        		grantedAuthorities.add(new SimpleGrantedAuthority("KORISNIK"));
+        		grantedAuthorities.add(new SimpleGrantedAuthority("KORISNIK"))	;
                 return new org.springframework.security.core.userdetails.User(o.getUsername(), o.getPassword(), grantedAuthorities);
         	}
         }
         
         for(int i = 0; i < treneri.size(); i++)
         {
-        	if(treneri.get(i).getId() == idOsobe)
+        	if(treneri.get(i).getOsoba().getId() == idOsobe)
         	{
         		System.out.println("TRENER");
         		grantedAuthorities.add(new SimpleGrantedAuthority("TRENER"));
