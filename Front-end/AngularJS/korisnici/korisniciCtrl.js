@@ -5,7 +5,7 @@
 
         $scope.korisnici =
         [
-         /*   {
+            {
                 id: 1,
                 bolesti: "Pretilost",
                 datumPristupa: new Date(2016, 2, 2, 12, 0, 0, 0),
@@ -34,7 +34,7 @@
                 tezina: 60,
                 visina: 150,
                 zeljenaKilaza: 60
-            },*/
+            },
         ];
         $scope.selektuj = function (korisnik) {
             $scope.odabrani = korisnik;
@@ -52,14 +52,14 @@
             $scope.odabrani = null;
         }
 
-
+        /*
         var serviceBase = "http://localhost:8081/";
         $scope.izlistajNestale = function () {
             $http.get(serviceBase + 'korisnici/osobe/svi')
         .success(function (data) {
             $scope.listaOsoba = data;
         })
-    }
+    }*/
         //$scope.dajSveKorisnike = function () {
         //    korisniciServis.list("svi",
         //        function (data) {

@@ -1,7 +1,7 @@
 ﻿(function () {
     var NutricionizamFitnes = angular.module('NutricionizamFitnes', ['ngStorage','ngRoute']);
 
-    NutricionizamFitnes.config(function ($routeProvider) {
+    NutricionizamFitnes.config(function ($routeProvider, $httpProvider) {
         $routeProvider
             .when("/korisnici",
             {
@@ -25,6 +25,10 @@
             })
             .otherwise({ redirectTo: "/login" });
 
+        $httpProvider.defaults.headers.common = {};
+        $httpProvider.defaults.headers.post = {};
+        $httpProvider.defaults.headers.put = {};
+        $httpProvider.defaults.headers.patch = {};
        
     });
 }());

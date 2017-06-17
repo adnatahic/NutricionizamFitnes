@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -22,27 +25,23 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
-import com.korisnici.module.Korisnik;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import com.korisnici.module.Osoba;
-import com.korisnici.module.Trener;
 import com.korisnici.repository.OsobaRepository;
 
 import org.json.JSONObject;
-
+@CrossOrigin
 @SpringBootApplication
 @EnableAutoConfiguration
-@CrossOrigin
 @RestController
 @RequestMapping("/korisnici")
 public class OsobaController {
@@ -56,18 +55,15 @@ public class OsobaController {
 		return new RestTemplate();
 	}
 	
-
-	/*@RequestMapping(value="/osobe/svi", method=RequestMethod.GET)
+	
+	@RequestMapping(value="/osobe/svi", method=RequestMethod.GET)
+	
 	  public List<Osoba> VratiSveOsobe() {
 	    return (List<Osoba>) repo.findAll();
-	  }*/
-	
-	@RequestMapping(value="/osobe/svi",method=RequestMethod.GET)
-	
-	  public List<Osoba> getAll() {
-	    return (List<Osoba>) repo.findAll();
+	    
+	   
 	  }
-
+	
 	@RequestMapping(value="/osobe/{id}", method=RequestMethod.GET)
 	
 	  public ResponseEntity<Osoba> VratiOsobuId(@PathVariable Integer id ) {
@@ -113,7 +109,7 @@ public class OsobaController {
 	    
 	    return new ResponseEntity("No User found with username " + username, HttpStatus.NOT_FOUND);
 	  }
-		
+	
 	
 	@RequestMapping(value="/osobe/login/{username}/{pass}", method=RequestMethod.GET)
 	  public ResponseEntity<Osoba> LoginUsernamePass(@PathVariable String username, @PathVariable String pass ) {
@@ -129,9 +125,11 @@ public class OsobaController {
 	
 	  }
 	@RequestMapping(value="/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", method=RequestMethod.GET)
-	  public ResponseEntity<Osoba> DodajOsobu(@PathVariable String ime, @PathVariable String prezime,@PathVariable String username,@PathVariable String password, @PathVariable String email ) {
+	  public ResponseEntity<Osoba> DodajOsobu(HttpServletRequest req ,@PathVariable String ime, @PathVariable String prezime,@PathVariable String username,@PathVariable String password, @PathVariable String email ) {
 	    List<Osoba> osobe= (List<Osoba>) repo.findAll();
 	    
+		String token =	req.getHeader("Authorization");
+		
 	    Osoba o = new Osoba();
 	    o.setIme(ime);
 	    o.setPassword(password);
@@ -141,14 +139,17 @@ public class OsobaController {
 	    
 
 	    RestTemplate rs= new RestTemplate();
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.add("Authorization", token);
 	    Map<String, String> vars = new HashMap<String, String>();
 	    vars.put("ime", ime);
 	    vars.put("prezime", prezime);
 	    vars.put("username", username);
 	    vars.put("password", password);
 	    vars.put("email", email);
-	    String rez= rs.getForObject("http://localhost:8082/planiprogram/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
-	    String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
+	    HttpEntity requestEntity = new HttpEntity(vars,headers);
+	    rs.exchange("http://localhost:8082/planiprogram/osobe/dodaj/"+ime+"/"+prezime+"/"+username+"/"+password+"/"+email, HttpMethod.GET,requestEntity,String.class);
+	  //  String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
 	    repo.save(o);
 	    return new ResponseEntity("Uspješno kreirana osoba!" , HttpStatus.OK);
 	  }

@@ -1,7 +1,8 @@
 ﻿(function () {
     var NutricionizamFitnes = angular.module('NutricionizamFitnes');
 
-    NutricionizamFitnes.controller('treneriCtrl', ['$scope', 'treneriServis', function ($scope, treneriServis) {
+    NutricionizamFitnes.controller('treneriCtrl', ['$scope', '$http', '$localStorage', 'treneriServis', function ($scope, $http, $localStorage, treneriServis) {
+        $scope.listaNestalih = [];
 
         $scope.treneri =
         [
@@ -47,6 +48,23 @@
                     }
                 });
         };
+        
+        var serviceBase = "http://localhost:8081/";
+        $scope.izlistajSveOsobe = function () {
+            console.log("pozdrav");
+            console.log($localStorage.nesto);
+            var urlSveOsobe = serviceBase + 'korisnici/osobe/svi';
 
-    }]);
-}());
+            $http({
+                method: 'GET', url: urlSveOsobe, headers: {
+                    'Authorization': $localStorage.nesto,
+                }
+            })
+        .success(function (data) {
+            $scope.listaOsoba = data;
+        })
+        };
+
+
+        }]);
+    }());

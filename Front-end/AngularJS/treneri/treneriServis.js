@@ -4,7 +4,7 @@
 
     NutricionizamFitnes.factory("treneriServis", function ($http, $rootScope) {
 
-        var source = "http://localhost:8080/treneri/";
+        var source = "http://localhost:808/treneri/";
 
         return {
 

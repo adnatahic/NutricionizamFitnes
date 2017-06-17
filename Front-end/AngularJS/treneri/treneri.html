@@ -22,12 +22,11 @@
                 </div>
             </div>
         </div>
-    <a class="btn" data-toggle="modal" data-target="#podaciOKorisniku" ng-click="dodajTrenera(korisnik)">Dodaj trenera</a>
-
-
+    &nbsp;&nbsp;
+    <button class="button" data-toggle="modal" data-target="#sveOsobe" ng-click="izlistajSveOsobe()">&nbsp;&nbsp;Dodaj trenera&nbsp;&nbsp;</button>
     </div>
     <div class="ruler"></div>
 
-<div id="podaciOKorisniku" class="modal fade" role="dialog">
-    <div ng-include="'korisnici/sveOsobe.html'"></div>
+<div id="sveOsobe" class="modal fade" role="dialog">
+    <div ng-include="'treneri/sveOsobe.html'"></div>
 </div>

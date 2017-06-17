@@ -20,6 +20,7 @@ import org.springframework.web.filter.GenericFilterBean;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
+
 class CorsFilter implements Filter {
 
 	@Override
@@ -31,10 +32,10 @@ class CorsFilter implements Filter {
     response.setHeader("Access-Control-Allow-Headers", "x-requested-with, Authorization, Content-Type");
     response.setHeader("Access-Control-Max-Age", "3600");
     response.setHeader("Access-Control-Expose-Headers", "Authorization");
-    //if (request.getMethod()!="OPTIONS") {
+    if (request.getMethod()!="OPTIONS") {
       chain.doFilter(req, res);
-    //} else {
-    //}
+    } else {
+    }
   }
 	@Override
   public void init(FilterConfig filterConfig) {}
