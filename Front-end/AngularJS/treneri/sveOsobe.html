@@ -6,7 +6,7 @@
                 <th>Prezime</th>
                 <th>Korisničko ime</th>
                 <th>Email</th>
-                <th></th>
+
             </tr>
         </thead>
         <tbody ng-repeat="o in listaOsoba">
@@ -24,7 +24,7 @@
                     {{o.email}}
                 </td>
                 <td class="action-buttons">
-                    <a class="btn" data-toggle="modal" data-target="#sveOsobe" ng-click="selektuj(o)"><b>Dodaj trenera</b></a>
+                    <a class="btn" data-toggle="modal" data-target="#dodajTrenera" ng-click="selektuj(o)"><b>Odaberi</b></a>
 
                 </td>
             </tr>
@@ -33,9 +33,7 @@
     </table>
 </div>
 
-
-        <div class="modal-footer bg-info">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="dodajTrenera()">Dodaj</button>
-            <button class="btn btn-default" data-dismiss="modal" ng-click="otkazi()">Odustani</button>
-        </div><!--end modal footer-->
+<div id="dodajTrenera" class="modal fade" role="dialog">
+    <div ng-include="'treneri/dodajTrenera.html'"></div>
+</div>
 

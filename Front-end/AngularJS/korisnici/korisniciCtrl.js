@@ -51,23 +51,5 @@
         $scope.otkazi = function (korisnik) {
             $scope.odabrani = null;
         }
-
-        /*
-        var serviceBase = "http://localhost:8081/";
-        $scope.izlistajNestale = function () {
-            $http.get(serviceBase + 'korisnici/osobe/svi')
-        .success(function (data) {
-            $scope.listaOsoba = data;
-        })
-    }*/
-        //$scope.dajSveKorisnike = function () {
-        //    korisniciServis.list("svi",
-        //        function (data) {
-        //            if (data) {
-        //                $scope.korisnici = data;
-        //            }
-        //        });
-        //};
-
     }]);
 }());

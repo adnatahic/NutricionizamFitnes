@@ -6,17 +6,20 @@
             <br />
             <br />
             <br />
-            <div class="row">
-                <div class="col-md-3" ng-repeat="trener in treneri">
+            <div data-ng-controller="treneriCtrl" data-ng-init="izlistajSveTrenere()" class="row">
+                <div class="col-md-3" ng-repeat="trener in listaTrenera">
                     <div class="grid_4">
                         <div class="banner">
                             <img style="height:300px;width:auto" src="http://www.trainerize.com/_images/Trainer.png" alt="">
                             <p class="label">
+                                <p>{{trener.osoba.ime}} {{trener.osoba.prezime}}</p>
+                                <p>{{trener.godine}}&nbsp;godina</p>
                                 <p>{{trener.edukacija}}</p>
                                 <p>{{trener.iskustvo}} godina iskustva</p>
                                 <p>Ukupno {{trener.brojKlijenata}} zadovoljnih klijenata</p>
-                                <div class="price">Rejting:  {{trener.rejting}}  <i class="fa fa-star"></i></div>
-                            </div>
+                            <a class="btn" data-toggle="modal" data-target="#izmijeniTrenera" ng-click="selektujTrenera(trener)"><b>Izmijeni</b></a>
+                            <br /><br /><br />
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -24,9 +27,13 @@
         </div>
     &nbsp;&nbsp;
     <button class="button" data-toggle="modal" data-target="#sveOsobe" ng-click="izlistajSveOsobe()">&nbsp;&nbsp;Dodaj trenera&nbsp;&nbsp;</button>
+
     </div>
     <div class="ruler"></div>
 
 <div id="sveOsobe" class="modal fade" role="dialog">
     <div ng-include="'treneri/sveOsobe.html'"></div>
+</div>
+<div id="izmijeniTrenera" class="modal fade" role="dialog">
+    <div ng-include="'treneri/izmijeniTrenera.html'"></div>
 </div>
