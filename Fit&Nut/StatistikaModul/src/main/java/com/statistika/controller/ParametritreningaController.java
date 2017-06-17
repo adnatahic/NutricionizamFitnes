@@ -25,6 +25,7 @@ import com.statistika.repository.ParametritreningaRepository;
 public class ParametritreningaController {
 	@Autowired
 	  private ParametritreningaRepository repo;
+	@Autowired
 	private KorisnikRepository repok;
 	
 	@RequestMapping(value="/parametri/svi",method=RequestMethod.GET)

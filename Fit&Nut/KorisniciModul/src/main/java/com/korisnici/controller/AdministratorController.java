@@ -26,6 +26,7 @@ import com.korisnici.repository.OsobaRepository;
 public class AdministratorController {
 	@Autowired
 	  private AdministratorRepository repo;
+	@Autowired
 	private OsobaRepository repoo;
 	
 	@RequestMapping(value="/administrator/svi", method=RequestMethod.GET)
@@ -66,18 +67,16 @@ public class AdministratorController {
 	  public ResponseEntity<Osoba> DodajAdmin(@PathVariable Integer idOsoba ) {
 	    List<Administrator> admini= (List<Administrator>) repo.findAll();
 	    List<Osoba> osobe= (List<Osoba>) repoo.findAll();
-	    for(Osoba o: osobe)
+	   
+	    Osoba o= repoo.findOne(idOsoba);
+	    if(o!= null)
 	    {
-	    	if(o.getId()==idOsoba)
-	    	{
 	    		Administrator novi= new Administrator();
 	    		novi.setOsoba(o);
-	    		
+	    		novi.setId(admini.get(admini.size()-1).getId()+1);
 	    		repo.save(novi);
 	    	
 	    		return new ResponseEntity("Uspješno kreiran administrator!" , HttpStatus.OK);
-	    		
-	    	}
 	    }
 	   
 	  return new ResponseEntity("Administrator nije kreiran!" , HttpStatus.NOT_FOUND);

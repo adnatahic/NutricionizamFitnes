@@ -31,6 +31,9 @@ import com.planiprogram.repository.OsobaRepository;
 
 
 
+
+
+
 import org.json.JSONObject;
 
 @RestController
@@ -39,15 +42,21 @@ public class OsobaController {
 	@Autowired
 	  private OsobaRepository repo;
 	
+	@Bean
+	@LoadBalanced
+	RestTemplate restTemplate()
+	{
+		return new RestTemplate();
+	}
+	
 	
 	
 	@RequestMapping(value="/osobe/svi", method=RequestMethod.GET)
-	
 	  public List<Osoba> VratiSveOsobe() {
 	    return (List<Osoba>) repo.findAll();
-	    
-	   
 	  }
+
+	
 	
 	@RequestMapping(value="/osobe/{id}", method=RequestMethod.GET)
 	
@@ -61,17 +70,18 @@ public class OsobaController {
 	    
 	    return new ResponseEntity("Nije pronađena osoba sa id-em : " + id, HttpStatus.NOT_FOUND);
 	  }
+
 	
 	@RequestMapping(value="/osobe/izbrisi/{id}", method=RequestMethod.GET)
 	  public ResponseEntity<String> izbrisiOsobuId(@PathVariable Integer id ) {
 	    List<Osoba> osobe= (List<Osoba>) repo.findAll();
-	   
+	    RestTemplate rs= new RestTemplate();
 	    for(Osoba o: osobe)
 	    { 
 	    	if(o.getId()==id) 
 	    	{ 
 	    		repo.delete(o);
-	    			return new ResponseEntity("OK" , HttpStatus.OK);
+	    		return new ResponseEntity( HttpStatus.OK);
 	    	}
 	    }
 	    
@@ -92,7 +102,7 @@ public class OsobaController {
 	    
 	    return new ResponseEntity("No User found with username " + username, HttpStatus.NOT_FOUND);
 	  }
-	
+		
 	
 	@RequestMapping(value="/osobe/login/{username}/{pass}", method=RequestMethod.GET)
 	  public ResponseEntity<Osoba> LoginUsernamePass(@PathVariable String username, @PathVariable String pass ) {
@@ -110,17 +120,19 @@ public class OsobaController {
 	@RequestMapping(value="/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", method=RequestMethod.GET)
 	  public ResponseEntity<Osoba> DodajOsobu(@PathVariable String ime, @PathVariable String prezime,@PathVariable String username,@PathVariable String password, @PathVariable String email ) {
 	    List<Osoba> osobe= (List<Osoba>) repo.findAll();
-	    
-	    int velicina= osobe.size();
+	    System.out.println("Proslo3");
 	    Osoba o = new Osoba();
 	    o.setIme(ime);
 	    o.setPassword(password);
 	    o.setPrezime(prezime);
 	    o.setUsername(username);
 	    o.setEmail(email);
-	    o.setId(osobe.get(velicina-1).getId()+1);
-	   repo.save(o);
-	    return new ResponseEntity("Uspješno kreirana osoba!" , HttpStatus.OK);
+	    o.setId(osobe.get(osobe.size()-1).getId() +1);
+	    
+
+	    repo.save(o);
+	    System.out.println("Proslo 4");
+	    return new ResponseEntity(o, HttpStatus.OK);
 	  }
 	
 	
@@ -128,7 +140,7 @@ public class OsobaController {
 	@RequestMapping(value="/osobe/update/{id}/{ime}/{prezime}/{username}/{password}/{email}", method=RequestMethod.GET)
 	  public ResponseEntity<String> UpdateOsoba(@PathVariable Integer id, @PathVariable String ime, @PathVariable String prezime, @PathVariable String username, @PathVariable String password, @PathVariable String email) {
 		List<Osoba> osobe= (List<Osoba>) repo.findAll();
-		
+		RestTemplate rs= new RestTemplate();
 		for(Osoba o: osobe)
 		{
 			if(o.getId()==id)
@@ -143,14 +155,21 @@ public class OsobaController {
 				
 				if(!o.getEmail().equals(email)) o.setEmail(email);
 				
-				
+				Map<String, String> vars = new HashMap<String, String>();
+				vars.put("id", id.toString());
+			    vars.put("ime", ime);
+			    vars.put("prezime", prezime);
+			    vars.put("username", username);
+			    vars.put("password", password);
+			    vars.put("email", email);
 				
 				repo.save(o);
-				
+			
 				return new ResponseEntity("Uspješno update-ovana osoba sa id-em: " + o.getId(), HttpStatus.OK);
 			}
 		}
 		
 	    return new ResponseEntity("Nije pronadjena osoba sa zeljenim id-em!" , HttpStatus.NOT_FOUND);
 	  }
+	
 }

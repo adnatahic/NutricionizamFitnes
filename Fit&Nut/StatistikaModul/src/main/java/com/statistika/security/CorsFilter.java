@@ -1,4 +1,5 @@
-package com.korisnici.security;
+package com.statistika.security;
+
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

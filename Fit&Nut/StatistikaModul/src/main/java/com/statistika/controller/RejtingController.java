@@ -27,7 +27,9 @@ import com.statistika.repository.TrenerRepository;
 public class RejtingController {
 	@Autowired
 	  private RejtingRepository repo;
+	@Autowired
 	private TrenerRepository repot;
+	@Autowired
 	private KorisnikRepository repok;
 	
 	@RequestMapping(value="/rejting/svi",method=RequestMethod.GET)

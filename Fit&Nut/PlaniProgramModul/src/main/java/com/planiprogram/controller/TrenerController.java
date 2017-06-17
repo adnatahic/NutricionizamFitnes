@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,7 +29,9 @@ import com.planiprogram.repository.TrenerRepository;
 public class TrenerController {
 	@Autowired
 	private TrenerRepository repo;
+	@Autowired
 	private KorisnikRepository repok;
+	@Autowired
 	private OsobaRepository repoo;
 	
 	@RequestMapping(value="/treneri/svi", method=RequestMethod.GET)
@@ -55,7 +58,8 @@ public class TrenerController {
 	@RequestMapping(value="/treneri/izbrisi/{id}", method=RequestMethod.GET)
 	  public ResponseEntity<String> izbrisiTreneraId(@PathVariable Integer id ) {
 	    List<Trener> treneri= (List<Trener>) repo.findAll();
-	 for(Trener o: treneri)
+	    RestTemplate rs= new RestTemplate();
+	    for(Trener o: treneri)
 	    { 
 	    	if(o.getId()==id) 
 	    	{ 
@@ -67,9 +71,9 @@ public class TrenerController {
 	  }
 	
 	@RequestMapping(value="/treneri/klijent/{id}", method=RequestMethod.GET)
-	  public ResponseEntity<Trener> VratiTreneraKlijenta(@PathVariable Integer id ) {
+	  public ResponseEntity<Trener> VratiTreneraKlijenta(@PathVariable int id ) {
 	    List<Trener> treneri= (List<Trener>) repo.findAll();
-	    List<Korisnik	> korisnici= (List<Korisnik>) repok.findAll();
+	    List<Korisnik> korisnici= (List<Korisnik>) repok.findAll();
 	    
 	    for(Korisnik k: korisnici)
 	    { 
@@ -99,37 +103,38 @@ public class TrenerController {
 	    
 	  }
 	
-	@RequestMapping(value="/treneri/dodaj/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.GET)
+	@RequestMapping(value="/treneri/dodaj/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.POST)
 	  public ResponseEntity<Osoba> DodajTrenera(@PathVariable String spol, @PathVariable Integer godine,@PathVariable String edukacija,@PathVariable Integer iskustvo, @PathVariable Integer brojKlijenata, @PathVariable Integer idOsoba ) {
 	    List<Trener> treneri= (List<Trener>) repo.findAll();
-	    List<Osoba> osobe= (List<Osoba>) repoo.findAll();
-	    int velicina= treneri.size();
-	    for(Osoba nova:osobe)
+	    
+	   
+	   Osoba osob= repoo.findOne(idOsoba);
+	    if(osob!=null)
 	    {
-	    	if(nova.getId()==idOsoba)
-	    	{
-	    		 Trener o = new Trener();
+	    int velicina= treneri.size();
+	    		 Trener o = new Trener();	
 	    		    o.setBrojKlijenata(brojKlijenata);
 	    		    o.setEdukacija(edukacija);
 	    		    o.setGodine(godine);
 	    		    o.setIskustvo(iskustvo);
-	    		    o.setOsoba(nova);
-	    		    o.setSpol(spol);
-	    		    o.setId(osobe.get(velicina-1).getId()+1);
+	    		    o.setOsoba(osob);
+	    		    o.setSpol(spol); 
+	    		    o.setId(treneri.get(treneri.size()-1).getId()+1);
 	    		    repo.save(o);
 	    		    return new ResponseEntity("Uspješno kreiran trener!" , HttpStatus.OK);
-	    	}
+	    
 	    }
-	
+	    return new ResponseEntity("Greška!" , HttpStatus.NOT_FOUND);
 	   
-	    return new ResponseEntity("Trener nije kreiran!" , HttpStatus.NOT_FOUND);
 	  }
+
 	
-	@RequestMapping(value="/treneri/update/{id}/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.GET)
+	@RequestMapping(value="/treneri/update/{id}/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.POST)
 	  public ResponseEntity<String> UpdateTrener(@PathVariable Integer id,@PathVariable String spol, @PathVariable Integer godine,@PathVariable String edukacija,@PathVariable Integer iskustvo, @PathVariable Integer brojKlijenata, @PathVariable Integer idOsoba) {
 		List<Trener> treneri= (List<Trener>) repo.findAll();
 	    List<Osoba> osobe= (List<Osoba>) repoo.findAll();
 
+		RestTemplate rs= new RestTemplate();
 		for(Trener o: treneri)
 		{
 			if(o.getId()==id)
@@ -152,12 +157,24 @@ public class TrenerController {
 					}
 				}
 				
-    		  	return new ResponseEntity("Uspješno update-ovana osoba sa id-em: " + o.getId(), HttpStatus.OK);
+    		    Map<String, String> vars = new HashMap<String, String>();
+    		    vars.put("id", id.toString());
+				vars.put("spol", spol);
+    		    vars.put("godine", godine.toString());
+    		    vars.put("edukacija", edukacija);
+    		    vars.put("iskustvo", iskustvo.toString());
+    		    vars.put("brojKlijenata", brojKlijenata.toString());
+    		    vars.put("idOsoba", idOsoba.toString());
+    		    repo.save(o);
+    		   // String rez= rs.getForObject("http://localhost:8082/planiprogram/treneri/update/{id}/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", String.class, vars);
+    		    //String rez2= rs.getForObject("http://localhost:8083/statistika/treneri/dodaj/update/{id}/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", String.class, vars);
+				return new ResponseEntity("Uspješno update-ovana osoba sa id-em: " + o.getId(), HttpStatus.OK);
 			}
 		}
 		
 	    return new ResponseEntity("Nije pronadjena osoba sa zeljenim id-em!" , HttpStatus.NOT_FOUND);
 	  }
+	
 	
 	
 	

@@ -15,15 +15,15 @@ public class Trener implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private Integer id;
 
-	private int brojKlijenata;
+	private Integer brojKlijenata;
 
 	private String edukacija;
 
-	private int godine;
+	private Integer godine;
 
-	private int iskustvo;
+	private Integer iskustvo;
 
 	private String spol;
 
@@ -36,19 +36,19 @@ public class Trener implements Serializable {
 	public Trener() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getBrojKlijenata() {
+	public Integer getBrojKlijenata() {
 		return this.brojKlijenata;
 	}
 
-	public void setBrojKlijenata(int brojKlijenata) {
+	public void setBrojKlijenata(Integer brojKlijenata) {
 		this.brojKlijenata = brojKlijenata;
 	}
 
@@ -60,19 +60,19 @@ public class Trener implements Serializable {
 		this.edukacija = edukacija;
 	}
 
-	public int getGodine() {
+	public Integer getGodine() {
 		return this.godine;
 	}
 
-	public void setGodine(int godine) {
+	public void setGodine(Integer godine) {
 		this.godine = godine;
 	}
 
-	public int getIskustvo() {
+	public Integer getIskustvo() {
 		return this.iskustvo;
 	}
 
-	public void setIskustvo(int iskustvo) {
+	public void setIskustvo(Integer iskustvo) {
 		this.iskustvo = iskustvo;
 	}
 

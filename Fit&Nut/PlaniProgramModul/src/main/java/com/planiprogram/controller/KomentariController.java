@@ -28,7 +28,9 @@ import com.planiprogram.repository.TrenerRepository;
 public class KomentariController {
 	@Autowired
 	  private KomentariRepository repo;
+	@Autowired
 	private TrenerRepository repot;
+	@Autowired
 	private KorisnikRepository repok;
 	
 	@RequestMapping(value="/komentari/svi", method=RequestMethod.GET)

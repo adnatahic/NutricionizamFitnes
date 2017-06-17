@@ -50,7 +50,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         
         for(int i = 0; i < korisnici.size(); i++)
         {
-        	if(korisnici.get(i).getId() == idOsobe)
+        	if(korisnici.get(i).getOsoba().getId() == idOsobe)
         	{
         		System.out.println("KORISNIK");
         		grantedAuthorities.add(new SimpleGrantedAuthority("KORISNIK"));
@@ -60,7 +60,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         
         for(int i = 0; i < treneri.size(); i++)
         {
-        	if(treneri.get(i).getId() == idOsobe)
+        	if(treneri.get(i).getOsoba().getId() == idOsobe)
         	{
         		System.out.println("TRENER");
         		grantedAuthorities.add(new SimpleGrantedAuthority("TRENER"));

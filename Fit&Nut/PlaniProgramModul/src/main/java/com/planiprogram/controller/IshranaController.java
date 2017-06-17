@@ -24,6 +24,7 @@ import com.planiprogram.repository.KorisnikRepository;
 public class IshranaController {
 	@Autowired
 	private IshranaRepository repo;
+	@Autowired
 	private KorisnikRepository repo_korisnici;
 	
 	@RequestMapping(value="/ishrana/svi", method=RequestMethod.GET)

@@ -1,8 +1,14 @@
 package com.korisnici.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +29,17 @@ import com.korisnici.module.Trener;
 import com.korisnici.repository.KorisnikRepository;
 import com.korisnici.repository.OsobaRepository;
 import com.korisnici.repository.TrenerRepository;
+
+
 @CrossOrigin
 @RestController
 @RequestMapping("/korisnici")
 public class KorisnikController {
 	@Autowired
 	  private KorisnikRepository repo;
+	@Autowired
 	private OsobaRepository repoo;
+	@Autowired
 	private TrenerRepository repot;
 	
 	@RequestMapping(value="/korisnik/svi",method=RequestMethod.GET)
@@ -71,12 +81,23 @@ public class KorisnikController {
 	
 	@RequestMapping(value="/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
 	  public ResponseEntity<String> DodajKorisnika(@PathVariable String spol, @PathVariable Integer godine, @PathVariable Integer visina, 
-			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable Date datumPristupa,
+			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable String datumPristupa,
 			  @PathVariable Integer idTrener, @PathVariable Integer idOsoba) {
 		
 		List<Korisnik> korisnici= (List<Korisnik>) repo.findAll();
 		List<Osoba> osobe= (List<Osoba>) repoo.findAll();
 		List<Trener> treneri= (List<Trener>) repot.findAll();
+		
+		
+		SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy"); 
+		Date datum = null;
+		try {
+			datum = dt.parse(datumPristupa);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
 		
 		for(Korisnik k: korisnici)
 		{
@@ -111,7 +132,8 @@ public class KorisnikController {
 				novi.setVisina(visina);
 				novi.setTezina(tezina);
 				novi.setZeljenaKilaza(zeljenaTezina);
-				novi.setDatumPristupa(datumPristupa);
+				novi.setDatumPristupa(datum);
+				novi.setId(korisnici.get(korisnici.size()-1).getId()+1);
 				RestTemplate rs= new RestTemplate();
 				
 				Map<String, String> vars = new HashMap<String, String>();
@@ -128,7 +150,7 @@ public class KorisnikController {
 	    		String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
 	    		repo.save(novi);
 				
-				
+	    		return new ResponseEntity("Uspješno kreiran korisnik! " , HttpStatus.OK);
 			}
 		}
 		
@@ -138,7 +160,7 @@ public class KorisnikController {
 	
 	@RequestMapping(value="/korisnik/update/{id}/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
 	  public ResponseEntity<String> UpdateKorisnika(@PathVariable Integer id, @PathVariable String spol, @PathVariable Integer godine, @PathVariable Integer visina, 
-			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable Date datumPristupa,
+			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable String datumPristupa,
 			  @PathVariable Integer idTrener, @PathVariable Integer idOsoba) {
 		
 		List<Korisnik> korisnici= (List<Korisnik>) repo.findAll();
@@ -178,13 +200,23 @@ public class KorisnikController {
 					}
 				}
 				
+				
+				DateFormat format = new SimpleDateFormat("dd.MM.YYYY", Locale.ENGLISH);
+				Date date= new Date();
+				try {
+					date = format.parse(datumPristupa);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				if(!o.getSpol().equals(spol)) o.setSpol(spol);
 				if(o.getGodine()!=godine) o.setGodine(godine);
 				if(o.getVisina()!=visina) o.setVisina(visina);
 				if(o.getTezina()!=tezina) o.setTezina(tezina);
 				if(o.getZeljenaKilaza()!=zeljenaTezina) o.setZeljenaKilaza(zeljenaTezina);
 				if(!o.getBolesti().equals(bolesti)) o.setBolesti(bolesti);
-				if(!o.getDatumPristupa().toString().equals(datumPristupa.toString())) o.setDatumPristupa(datumPristupa);
+				if(!o.getDatumPristupa().toString().equals(datumPristupa.toString())) o.setDatumPristupa( date);
 				
 				
 				vars.put("spol",spol);
@@ -196,7 +228,7 @@ public class KorisnikController {
 				vars.put("datumPristupa", datumPristupa.toString());
 				vars.put("idTrener",idTrener.toString());
 				vars.put("idOsoba", idOsoba.toString());
-	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
+				String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
 	    		String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
 	    		repo.save(o);
 				
