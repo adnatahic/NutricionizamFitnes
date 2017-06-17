@@ -71,7 +71,7 @@ public class KorisnikController {
 	    	{ 
 	    		RestTemplate rs= new RestTemplate();
 	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/osobe/izbrisi/{id}", String.class, id);
-	    		String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/izbrisi/{id}", String.class, id);
+	    		//String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/izbrisi/{id}", String.class, id);
 	    		repo.delete(o);
 	    		return new ResponseEntity("Uspješno izbrisan korisnik sa id-em: " + id, HttpStatus.OK);
 	    	}
@@ -147,7 +147,7 @@ public class KorisnikController {
 				vars.put("idTrener",idTrener.toString());
 				vars.put("idOsoba", idOsoba.toString());
 	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
-	    		String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
+	    		//String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
 	    		repo.save(novi);
 				
 	    		return new ResponseEntity("Uspješno kreiran korisnik! " , HttpStatus.OK);
@@ -158,9 +158,9 @@ public class KorisnikController {
 	    return new ResponseEntity("Nije pronađen korisnik sa id-em : " , HttpStatus.NOT_FOUND);
 	  }
 	
-	@RequestMapping(value="/korisnik/update/{id}/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
+	@RequestMapping(value="/korisnik/update/{id}/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
 	  public ResponseEntity<String> UpdateKorisnika(@PathVariable Integer id, @PathVariable String spol, @PathVariable Integer godine, @PathVariable Integer visina, 
-			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable String datumPristupa,
+			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti,
 			  @PathVariable Integer idTrener, @PathVariable Integer idOsoba) {
 		
 		List<Korisnik> korisnici= (List<Korisnik>) repo.findAll();
@@ -201,35 +201,26 @@ public class KorisnikController {
 				}
 				
 				
-				DateFormat format = new SimpleDateFormat("dd.MM.YYYY", Locale.ENGLISH);
-				Date date= new Date();
-				try {
-					date = format.parse(datumPristupa);
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
+			
 				if(!o.getSpol().equals(spol)) o.setSpol(spol);
 				if(o.getGodine()!=godine) o.setGodine(godine);
 				if(o.getVisina()!=visina) o.setVisina(visina);
 				if(o.getTezina()!=tezina) o.setTezina(tezina);
 				if(o.getZeljenaKilaza()!=zeljenaTezina) o.setZeljenaKilaza(zeljenaTezina);
 				if(!o.getBolesti().equals(bolesti)) o.setBolesti(bolesti);
-				if(!o.getDatumPristupa().toString().equals(datumPristupa.toString())) o.setDatumPristupa( date);
 				
 				
+				vars.put("id", id.toString() );
 				vars.put("spol",spol);
 				vars.put("godine", godine.toString());
 				vars.put("visina", visina.toString());
 				vars.put("tezina", tezina.toString());
 				vars.put("zeljenaTezina", zeljenaTezina.toString());
 				vars.put("bolesti", bolesti);
-				vars.put("datumPristupa", datumPristupa.toString());
 				vars.put("idTrener",idTrener.toString());
 				vars.put("idOsoba", idOsoba.toString());
-				String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
-	    		String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
+				String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/update/{id}/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{idTrener}/{idOsoba}", String.class, vars);
+	    		//String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
 	    		repo.save(o);
 				
 	    		 return new ResponseEntity("Uspješan update! " , HttpStatus.OK);

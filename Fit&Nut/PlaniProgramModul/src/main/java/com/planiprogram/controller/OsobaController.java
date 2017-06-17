@@ -18,6 +18,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -34,7 +35,9 @@ import com.planiprogram.repository.OsobaRepository;
 
 
 
+
 import org.json.JSONObject;
+
 
 @RestController
 @RequestMapping("/planiprogram")

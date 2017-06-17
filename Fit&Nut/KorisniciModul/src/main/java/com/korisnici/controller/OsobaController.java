@@ -38,6 +38,7 @@ import com.korisnici.repository.OsobaRepository;
 
 import org.json.JSONObject;
 
+
 @SpringBootApplication
 @EnableAutoConfiguration
 @RestController
@@ -86,7 +87,7 @@ public class OsobaController {
 	    	{ 
 	    		repo.delete(o);
 	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/osobe/izbrisi/{id}", String.class, id);
-	    		String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/izbrisi/{id}", String.class, id);
+	    		//String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/izbrisi/{id}", String.class, id);
 	    		return new ResponseEntity(rez , HttpStatus.OK);
 	    	}
 	    }
@@ -144,7 +145,7 @@ public class OsobaController {
 	    vars.put("password", password);
 	    vars.put("email", email);
 	    String rez= rs.getForObject("http://localhost:8082/planiprogram/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
-	    String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
+	   // String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/dodaj/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
 	    repo.save(o);
 	    return new ResponseEntity(o, HttpStatus.OK);
 	  }
@@ -179,7 +180,7 @@ public class OsobaController {
 			    System.out.println("Proslo1");
 				repo.save(o);
 				String rez= rs.getForObject("http://localhost:8082/planiprogram/osobe/update/{id}/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
-			   String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/update/{id}/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
+			  // String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/update/{id}/{ime}/{prezime}/{username}/{password}/{email}", String.class, vars);
 			   
 				System.out.println("Proslo2");
 				

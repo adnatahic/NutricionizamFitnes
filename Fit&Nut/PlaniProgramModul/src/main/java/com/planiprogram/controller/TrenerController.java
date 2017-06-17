@@ -103,8 +103,10 @@ public class TrenerController {
 	    
 	  }
 	
-	@RequestMapping(value="/treneri/dodaj/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.POST)
-	  public ResponseEntity<Osoba> DodajTrenera(@PathVariable String spol, @PathVariable Integer godine,@PathVariable String edukacija,@PathVariable Integer iskustvo, @PathVariable Integer brojKlijenata, @PathVariable Integer idOsoba ) {
+	@RequestMapping(value="/treneri/dodaj/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.GET)
+	  public ResponseEntity<Osoba> DodajTrenera(@PathVariable String spol, @PathVariable Integer godine,
+			  @PathVariable String edukacija,@PathVariable Integer iskustvo, 
+			  @PathVariable Integer brojKlijenata, @PathVariable Integer idOsoba ) {
 	    List<Trener> treneri= (List<Trener>) repo.findAll();
 	    
 	   
@@ -124,12 +126,12 @@ public class TrenerController {
 	    		    return new ResponseEntity("Uspješno kreiran trener!" , HttpStatus.OK);
 	    
 	    }
-	    return new ResponseEntity("Greška!" , HttpStatus.NOT_FOUND);
+	    return new ResponseEntity("Greška- planiprogram!" , HttpStatus.NOT_FOUND);
 	   
 	  }
 
 	
-	@RequestMapping(value="/treneri/update/{id}/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.POST)
+	@RequestMapping(value="/treneri/update/{id}/{spol}/{godine}/{edukacija}/{iskustvo}/{brojKlijenata}/{idOsoba}", method=RequestMethod.GET)
 	  public ResponseEntity<String> UpdateTrener(@PathVariable Integer id,@PathVariable String spol, @PathVariable Integer godine,@PathVariable String edukacija,@PathVariable Integer iskustvo, @PathVariable Integer brojKlijenata, @PathVariable Integer idOsoba) {
 		List<Trener> treneri= (List<Trener>) repo.findAll();
 	    List<Osoba> osobe= (List<Osoba>) repoo.findAll();
