@@ -1907,3 +1907,79 @@ org.eclipse.jface.text.BadLocationException: null
 2017-06-18 09:34:41,706 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-06-18 09:34:41,718 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-06-18 09:34:41,719 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-06-18 23:19:23,506 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.eureka:eureka:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\Eureka-Server\pom.xml.
+2017-06-18 23:19:31,419 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:KorisniciModul-conServer:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\GitServerZaKonfiguraciju\pom.xml.
+2017-06-18 23:19:32,528 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.korisnici:KorisniciModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\KorisniciModul\pom.xml.
+2017-06-18 23:19:35,505 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.pom
+2017-06-18 23:19:35,584 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.pom
+2017-06-18 23:19:35,646 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.0.5.RELEASE/spring-parent-3.0.5.RELEASE.pom
+2017-06-18 23:19:35,728 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.0.5.RELEASE/spring-parent-3.0.5.RELEASE.pom
+2017-06-18 23:19:35,790 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/mail/mail/1.4/mail-1.4.pom
+2017-06-18 23:19:35,853 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/mail/mail/1.4/mail-1.4.pom
+2017-06-18 23:19:36,212 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.jar
+2017-06-18 23:19:36,415 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.jar
+2017-06-18 23:19:36,478 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/mail/mail/1.4/mail-1.4.jar
+2017-06-18 23:19:36,915 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/mail/mail/1.4/mail-1.4.jar
+2017-06-18 23:19:37,649 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.planiprogram:PlanIProgamModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\pom.xml.
+2017-06-18 23:19:38,150 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.statistika:StatistikaModul:0.0.1-SNAPSHOT @ C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\StatistikaModul\pom.xml.
+2017-06-18 23:19:44,505 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Eureka-Server/src/main/java
+2017-06-18 23:19:44,552 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Eureka-Server/src/main/resources
+2017-06-18 23:19:44,552 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Eureka-Server/src/main/resources
+2017-06-18 23:19:44,568 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Eureka-Server/src/test/java
+2017-06-18 23:20:00,383 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /StatistikaModul/src/main/java
+2017-06-18 23:20:00,416 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /StatistikaModul/src/main/resources
+2017-06-18 23:20:00,435 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /StatistikaModul/src/main/resources
+2017-06-18 23:20:00,498 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /StatistikaModul/src/test/java
+2017-06-18 23:20:03,618 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GitServerZaKonfiguraciju/src/main/java
+2017-06-18 23:20:03,650 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /GitServerZaKonfiguraciju/src/main/resources
+2017-06-18 23:20:03,650 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /GitServerZaKonfiguraciju/src/main/resources
+2017-06-18 23:20:03,665 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GitServerZaKonfiguraciju/src/test/java
+2017-06-18 23:20:04,658 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /KorisniciModul/src/main/java
+2017-06-18 23:20:04,814 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /KorisniciModul/src/main/resources
+2017-06-18 23:20:04,828 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /KorisniciModul/src/main/resources
+2017-06-18 23:20:04,846 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /KorisniciModul/src/test/java
+2017-06-18 23:20:07,394 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PlaniProgramModul/src/main/java
+2017-06-18 23:20:07,426 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PlaniProgramModul/src/main/resources
+2017-06-18 23:20:07,441 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PlaniProgramModul/src/main/resources
+2017-06-18 23:20:07,461 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PlaniProgramModul/src/test/java
+2017-06-18 23:20:07,965 [Worker-0] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 5 project(s) in 57 sec
+2017-06-18 23:20:32,147 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:20:32,178 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-18 23:20:32,225 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:20:32,225 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:20:32,257 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\Eureka-Server\src\test\resources
+2017-06-18 23:20:34,533 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:20:34,533 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:20:34,533 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:20:34,549 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:20:34,549 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\Eureka-Server\src\test\resources
+2017-06-18 23:20:39,828 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:20:39,828 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-18 23:20:39,844 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:20:39,860 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:20:39,860 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\GitServerZaKonfiguraciju\src\test\resources
+2017-06-18 23:21:05,128 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:05,128 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-18 23:21:05,143 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:21:05,143 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:05,143 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-06-18 23:21:18,198 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:18,198 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-18 23:21:18,198 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:21:18,214 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:18,214 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\PlaniProgramModul\src\test\resources
+2017-06-18 23:21:21,030 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:21,030 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:21:21,030 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:21:21,045 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:21,045 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
+2017-06-18 23:21:23,165 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:23,165 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-18 23:21:23,180 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:21:23,180 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:21:23,196 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\StatistikaModul\src\test\resources
+2017-06-18 23:42:30,119 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:42:30,363 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-18 23:42:30,390 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-18 23:42:30,404 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-18 23:42:30,404 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Merima\Desktop\NWT_final\NutricionizamFitnes\Fit&Nut\KorisniciModul\src\test\resources
