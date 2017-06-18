@@ -1,0 +1,36 @@
+﻿
+<div">
+    <div class="container">
+        <div class="featured-block">
+            <br />
+            <h2><i class="fa fa-th-list"></i> Administratori</h2>
+            <br />
+            <br />
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#dodajNovogKorisnika" ng-click="ucitajDodajNovog()">Add new</button>
+            <br />
+
+
+            <div class="row" data-ng-init="init()">
+                <div class="col-md-3" ng-repeat="admin in administratori">
+                    <div class="block">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                
+                                <p>Ime: {{admin.osoba.ime}}</p>
+                                <p>Prezime: {{admin.osoba.prezime}}</p>
+                                <p>Username: {{admin.osoba.username }}</p>
+                                <p>Email: {{admin.osoba.email }}</p>
+                                <a class="btn" data-toggle="modal" ng-click="selektuj(admin)">Izbriši</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="ruler"></div>
+    </div>
+
+    
+    </div>

@@ -1,0 +1,51 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Novi korisnik</h2>
+        </div><!--end modal header-->
+        <div class="modal-body" ng-init="init2()">
+            <div class="container-fluid">
+                <ng-form class="panel-body">
+                    
+                    
+                    <p>Spol: </p>
+                    <input type="text" name="spol" class="form-control" ng-model="korisnik.spol" placeholder="Spol" />
+                    <br />
+                    <p>Godine: </p>
+                    <input type="text" name="godine" class="form-control" ng-model="korisnik.godine" placeholder="Godine" />
+                    <br />
+                    <p>Tezina: </p>
+                    <input type="text" name="tezina" class="form-control" ng-model="korisnik.tezina" placeholder="Tezina" />
+                    <br />
+                    <p>Visina: </p>
+                    <input type="text" name="visina" class="form-control" ng-model="korisnik.visina" placeholder="Visina" />
+                    <br />
+                    <p>Zeljena kilaza: </p>
+                    <input type="text" name="zeljenaKilaza" class="form-control" ng-model="korisnik.zeljenaKilaza" placeholder="Zeljena kilaza" />
+                    <br />
+                    <p>Bolesti: </p>
+                    <input type="text" name="bolesti" class="form-control" ng-model="korisnik.bolesti" placeholder="Bolesti" />
+                    <br />
+
+                    <p> Trener: </p>
+                    <select ng-model="korisnik.trener.id" ng-options="tr.id as tr.edukacija + ' ' + tr.osoba.ime for tr in treneri">
+
+                    </select>
+
+                    <p> Osoba: </p>
+                    <select ng-model="korisnik.osoba.id" ng-options="tr.id as tr.ime  + ' ' + tr.prezime for tr in osobe"></select>
+
+                      
+                    <br />
+
+
+                </ng-form>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="dodajKorisnika(korisnik)">Dodaj</button>
+            <button class="btn btn-default" data-dismiss="modal" ng-click="otkaziKorisnici()">Poništi</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

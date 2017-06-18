@@ -1,5 +1,5 @@
 ﻿(function () {
-    var NutricionizamFitnes = angular.module('NutricionizamFitnes', ['ngStorage','ngRoute']);
+    var NutricionizamFitnes = angular.module('NutricionizamFitnes', ['ngStorage', 'ngRoute']);
 
     NutricionizamFitnes.config(function ($routeProvider, $httpProvider) {
         $routeProvider
@@ -23,12 +23,27 @@
                 templateUrl: "registracija/registracija.html",
                 controller: "registracijaCtrl"
             })
+             .when("/dodajNovogKorisnika",
+            {
+                templateUrl: "korisnici/dodajNovogKorisnika.html",
+                controller: "korisniciCtrl"
+            })
+              .when("/planiprogram",
+            {
+                templateUrl: "korisnici/planiprogram.html",
+                controller: "korisniciCtrl"
+            })
+             .when("/administratori",
+            {
+                templateUrl: "administratori/administratori.html",
+                controller: "administratoriCtrl"
+            })
             .otherwise({ redirectTo: "/login" });
 
         $httpProvider.defaults.headers.common = {};
         $httpProvider.defaults.headers.post = {};
         $httpProvider.defaults.headers.put = {};
         $httpProvider.defaults.headers.patch = {};
-       
+
     });
 }());

@@ -1,0 +1,35 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Novi korisnik</h2>
+        </div><!--end modal header-->
+        <div class="modal-body" ng-init="init2()">
+            <div class="container-fluid">
+                <ng-form class="panel-body">
+
+
+                    <p>Korisnik: </p>
+                    <input type="text" name="korisnik" class="form-control" ng-model="trening.korisnik.id" placeholder="korisnik" />
+                    <br />
+                    
+                    <p>Trajanje: </p>
+                    <input type="text" name="trajanje" class="form-control" ng-model="trening.trajanje" placeholder="trajanje" />
+                    <br />
+                    <p>Vrsta: </p>
+                    <input type="text" name="vrsta" class="form-control" ng-model="trening.vrsta" placeholder="vrsta" />
+                    <br />
+
+                    <p>Opis: </p>
+                    <input type="text" name="opis" class="form-control" ng-model="trening.opis" placeholder="opis" />
+                    <br />
+
+                </ng-form>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="dodajPlaniprogram(trening)">Dodaj</button>
+            <button class="btn btn-default" data-dismiss="modal" ng-click="otkaziKorisnici()">Poništi</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

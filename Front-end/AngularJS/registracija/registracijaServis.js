@@ -2,10 +2,10 @@
 
     var NutricionizamFitnes = angular.module("NutricionizamFitnes");
 
-    NutricionizamFitnes.factory("registracijaServis", function ($http, $rootScope) {
+    NutricionizamFitnes.factory("registracijaServis", function ($http, $rootScope, $localStorage) {
 
         var source = "http://localhost:8081/korisnici/osobe/";
-
+        //$http.defaults.headers.common.Authorization = $localStorage.token;
         return {
 
             list: function (dataSet, callback) {
@@ -14,7 +14,7 @@
                          return callback(data);
                      })
                      .error(function (error) {
-                         $rootScope.message = error.message;
+                         //$rootScope.message = error.message;
                          callback(false);
                      });
             },
@@ -25,7 +25,8 @@
                          return callback(data);
                      })
                      .error(function (error) {
-                         $rootScope.message = error.message;
+                         //  $rootScope.message = error.message;
+
                          callback(false);
                      });
             },
@@ -36,7 +37,7 @@
                         callback(data);
                     })
                     .error(function (error) {
-                        $rootScope.message = error.message;
+                      //  $rootScope.message = error.message;
                         callback(false);
                     })
             },
@@ -47,7 +48,7 @@
                         callback(data);
                     })
                     .error(function (error) {
-                        $rootScope.message = error.message;
+                        //$rootScope.message = error.message;
                         callback(false);
                     })
             },
@@ -58,7 +59,7 @@
                         callback(true);
                     })
                     .error(function (error) {
-                        $rootScope.message = error.message;
+                        //$rootScope.message = error.message;
                         callback(false);
                     })
             },

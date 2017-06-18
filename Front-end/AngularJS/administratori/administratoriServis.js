@@ -1,20 +1,16 @@
-﻿
-
-(function () {
+﻿(function () {
 
     var NutricionizamFitnes = angular.module("NutricionizamFitnes");
 
-    NutricionizamFitnes.factory("loginServis", function ($http, $rootScope, $localStorage) {
+    NutricionizamFitnes.factory("administratoriServis", function ($http, $rootScope) {
 
-        var source = "http://localhost:8081/";
-        $http.defaults.headers.common.Authorization = $localStorage.token;
+        var source = "http://localhost:8081/korisnici/";
 
         return {
 
             list: function (dataSet, callback) {
                 $http.get(source + dataSet)
                      .success(function (data) {
-                        
                          return callback(data);
                      })
                      .error(function (error) {

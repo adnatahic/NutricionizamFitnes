@@ -4,11 +4,23 @@
 
     NutricionizamFitnes.factory("korisniciServis", function ($http, $rootScope) {
 
-        var source = "http://localhost:8080/osobe/";
+        var source = "http://localhost:8081/korisnici/";
+        var source1 = "http://localhost:8082/planiprogram/";
 
         return {
 
             list: function (dataSet, callback) {
+                $http.get(source + dataSet)
+                     .success(function (data) {
+                         return callback(data);
+                     })
+                     .error(function (error) {
+                         $rootScope.message = error.message;
+                         callback(false);
+                     });
+            },
+
+            listapp: function (dataSet, callback) {
                 $http.get(source + dataSet)
                      .success(function (data) {
                          return callback(data);

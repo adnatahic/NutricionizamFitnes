@@ -24,11 +24,13 @@
     <script src="treneri/treneriCtrl.js"></script>
     <script src="login/loginCtrl.js"></script>
     <script src="registracija/registracijaCtrl.js"></script>
+    <script src="administratori/administratoriCtrl.js"></script>
 
     <script src="korisnici/korisniciServis.js"></script>
     <script src="treneri/treneriServis.js"></script>
     <script src="login/loginServis.js"></script>
     <script src="registracija/registracijaServis.js"></script>
+    <script src="administratori/administratoriServis.js"></script>
     
 
 </head>
@@ -36,10 +38,21 @@
     <nav class="clearfix">
         <ul class="clearfix">
             <li><a href="#">Pocetna</a></li>
-            <li><a href="#/korisnici">Korisnici</a></li>
-            <li><a href="#/treneri">Treneri</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                    <strong>Svi korisnici</strong>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/korisnici">Korisnici</a></li>
+                    <li><a href="#/treneri">Treneri</a></li>
+                    <li><a href="#/administratori">Administratori</a></li>
+                </ul>
+            </li>
+           
             <li><a href="#/login">Login</a></li>
             <li><a href="#/registracija">Registracija</a></li>
+            
         </ul>
         <a href="#" id="pull">Menu</a>
     </nav>
