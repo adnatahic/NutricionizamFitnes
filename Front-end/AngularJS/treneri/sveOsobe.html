@@ -1,5 +1,6 @@
 ﻿<div class="row">
-    <table class="table table-hover" style="background-color:lightgray">
+    <input type="text" class="form-control" ng-model="search.osoba.ime" placeholder="Pretraži po imenu"/>
+     <table class="table table-hover" style="background-color:lightgray">
         <thead>
             <tr>
                 <th>&nbsp;&nbsp;&nbsp;&nbsp;Ime</th>
@@ -9,7 +10,8 @@
 
             </tr>
         </thead>
-        <tbody ng-repeat="o in listaOsoba">
+        
+        <tbody ng-repeat="o in listaOsoba | filter:search">
             <tr>
                 <td>
                     &nbsp;&nbsp;&nbsp;&nbsp;{{o.ime}}

@@ -3,21 +3,32 @@
         <div class="modal-header bg-info">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h2 class="modal-title">Trener</h2>
-        </div><!--end modal header-->
-        <div ng-controller="treneriCtrl" class="modal-body">
+        </div>
+        <div class="modal-body">
             <div class="container-fluid">
                 <ng-form class="panel-body">
-                    
-                    <p>Godine: </p>
-                    <input type="text" name="ime" class="form-control" ng-model="odabraniTrener.godine" ng-value="odabraniTrener.godine" />
+
+                    <p>Spol:{{odabraniTrener.spol}} </p>
+                    <input type="text" name="spol" class="form-control" ng-init="" ng-model="odabraniTrener.spol" placeholder="Spol" />
                     <br />
-                   
+                    <p>Godine: </p>
+                    <input type="number" name="godine" class="form-control" ng-model="odabraniTrener.godine" placeholder="Godine" />
+                    <br />
+                    <p>Edukacija: </p>
+                    <input type="text" name="edukacija" class="form-control" ng-model="odabraniTrener.edukacija" placeholder="Edukacija" />
+                    <br />
+                    <p>Iskustvo: </p>
+                    <input type="number" name="iskustvo" class="form-control" ng-model="odabraniTrener.iskustvo" placeholder="Iskustvo" />
+                    <br />
+                    <p>Broj klijenata: </p>
+                    <input type="number" name="broj_klijenata" class="form-control" ng-model="odabraniTrener.brojKlijenta" placeholder="Zeljena kilaza" />
+
                 </ng-form>
             </div>
-        </divng-app="app"><!--end modal body-->
-        <div class="modal-footer bg-info">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="editujKorisnika()">Edit</button>
-            <button class="btn btn-default" data-dismiss="modal" ng-click="otkazi()">Cancel</button>
-        </div><!--end modal footer-->
-    </div><!--end modal content-->
-</div><!--end modal dialog-->
+            <div class="modal-footer bg-info">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="izmijeniTrenera(odabraniTrener)">Izmijeni</button>
+                <button class="btn btn-default" data-dismiss="modal" ng-click="otkaziTrener()">Odustani</button>
+            </div><!--end modal footer-->
+        </div><!--end modal content-->
+        </div>
+</div>
