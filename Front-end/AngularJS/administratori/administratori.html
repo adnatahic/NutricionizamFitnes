@@ -3,12 +3,16 @@
     <div class="container">
         <div class="featured-block">
             <br />
-            <h2><i class="fa fa-th-list"></i> Administratori</h2>
             <br />
             <br />
-            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#dodajNovogKorisnika" ng-click="ucitajDodajNovog()">Add new</button>
+            <h2><i class="fa fa-th-list"></i> Administratori 
+                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#dodajNovogKorisnika" ng-click="ucitajDodajNovog()">Dodaj novog</button>
+            </h2>
             <br />
-
+            <br />
+            <br />
+           
+          
 
             <div class="row" data-ng-init="init()">
                 <div class="col-md-3" ng-repeat="admin in administratori">

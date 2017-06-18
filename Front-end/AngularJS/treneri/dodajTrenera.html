@@ -7,17 +7,28 @@
         <div class="modal-body">
             <div class="container-fluid">
                 <ng-form class="panel-body">
+
+
                     <p>Spol: </p>
-                    <input type="text" name="spol" class="form-control" ng-model="spol" placeholder="Spol" />
+                    <input type="text" name="spol" class="form-control" ng-model="trener.spol" placeholder="Spol" />
                     <br />
                     <p>Godine: </p>
-                    <input type="number" name="godine" class="form-control" ng-model="godine"/>
+                    <input type="number" name="godine" class="form-control" ng-model="trener.godine"/>
                     <br />
                     <p>Edukacija: </p>
-                    <input type="text" name="edukacija" class="form-control" ng-model="edukacija" placeholder="Edukacija" />
+                    <input type="text" name="edukacija" class="form-control" ng-model="trener.edukacija" placeholder="Edukacija" />
                     <br />
                     <p>Iskustvo </p>
-                    <input type="number" name="iskustvo" class="form-control" ng-model="iskustvo"/>
+                    <input type="number" name="iskustvo" class="form-control" ng-model="trener.iskustvo"/>
+                    <p>Broj klijenata </p>
+                    <input type="number" name="brojklijenata" class="form-control" ng-model="trener.brojKlijenata" />
+
+
+                    <p> Osoba: </p>
+                    <select ng-model="trener.osoba" ng-options="tr as tr.ime  + ' ' + tr.prezime for tr in listaOsoba"></select>
+
+
+                    <br />
                     <br />
                     <br />
                     <p ng-model="message"></p>
@@ -25,7 +36,7 @@
             </div>
         </div><!--end modal body-->
         <div class="modal-footer bg-info">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="dodajTrenera(spol, godine, edukacija, iskustvo)">Spremi</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="dodajTrenera(trener)">Spremi</button>
             <button class="btn btn-default" data-dismiss="modal" ng-click="otkazi()">Odustani</button>
         </div><!--end modal footer-->
     </div><!--end modal content-->

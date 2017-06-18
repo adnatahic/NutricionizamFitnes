@@ -2,11 +2,10 @@
 
     var NutricionizamFitnes = angular.module("NutricionizamFitnes");
 
-    NutricionizamFitnes.factory("korisniciServis", function ($http, $rootScope) {
+    NutricionizamFitnes.factory("statistikaServis", function ($http, $rootScope, $localStorage) {
 
-        var source = "http://localhost:8081/korisnici/";
-        var source1 = "http://localhost:8082/planiprogram/";
-
+        var source = "http://localhost:8083/statistika/";
+        //$http.defaults.headers.common.Authorization = $localStorage.token;
         return {
 
             list: function (dataSet, callback) {
@@ -15,18 +14,7 @@
                          return callback(data);
                      })
                      .error(function (error) {
-                         $rootScope.message = error.message;
-                         callback(false);
-                     });
-            },
-
-            listapp: function (dataSet, callback) {
-                $http.get(source1 + dataSet)
-                     .success(function (data) {
-                         return callback(data);
-                     })
-                     .error(function (error) {
-                         $rootScope.message = error.message;
+                         //$rootScope.message = error.message;
                          callback(false);
                      });
             },
@@ -37,7 +25,8 @@
                          return callback(data);
                      })
                      .error(function (error) {
-                         $rootScope.message = error.message;
+                         //  $rootScope.message = error.message;
+
                          callback(false);
                      });
             },
@@ -48,7 +37,7 @@
                         callback(data);
                     })
                     .error(function (error) {
-                        $rootScope.message = error.message;
+                        //  $rootScope.message = error.message;
                         callback(false);
                     })
             },
@@ -59,7 +48,7 @@
                         callback(data);
                     })
                     .error(function (error) {
-                        $rootScope.message = error.message;
+                        //$rootScope.message = error.message;
                         callback(false);
                     })
             },
@@ -70,7 +59,7 @@
                         callback(true);
                     })
                     .error(function (error) {
-                        $rootScope.message = error.message;
+                        //$rootScope.message = error.message;
                         callback(false);
                     })
             },

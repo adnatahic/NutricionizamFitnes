@@ -76,7 +76,9 @@ public class IshranaController {
 	  }
 	
 	@RequestMapping(value="ishrana/dodaj/{dorucak}/{rucak}/{vecera}/{uzina1}/{uzina2}/{id}", method=RequestMethod.GET)
-	  public ResponseEntity<Ishrana> DodajIshranu(@PathVariable String dorucak, @PathVariable String rucak,@PathVariable String vecera,@PathVariable String uzina1, @PathVariable String uzina2, @PathVariable int id ) {
+	  public ResponseEntity<Ishrana> DodajIshranu(@PathVariable String dorucak, @PathVariable String rucak,
+			  @PathVariable String vecera,@PathVariable String uzina1, @PathVariable String uzina2, 
+			  @PathVariable int id ) {
 	    
 		List<Ishrana> ishrane= (List<Ishrana>) repo.findAll();
 		List<Korisnik> korisnici= (List<Korisnik>) repo_korisnici.findAll();
@@ -94,7 +96,7 @@ public class IshranaController {
 				i.setKorisnik(k);
 				
 				repo.save(i);
-			    return new ResponseEntity("Uspješno dodana ishrana za korisnika!" , HttpStatus.OK);
+			    return new ResponseEntity(i , HttpStatus.OK);
 			}
 		}
 	   

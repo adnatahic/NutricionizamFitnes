@@ -1,10 +1,42 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Plan i program</h2>
+        </div><!--end modal header-->
+        <div class="modal-body">
+            <div class="container-fluid">
+                <ng-form class="panel-body">
 
-</body>
-</html>
+
+                   
+                    <p>Doručak: </p>
+                    <input type="text" name="dorucak" class="form-control" ng-model="ishrana.dorucak" placeholder="Doručak" />
+                    <br />
+
+                    <p>Ručak: </p>
+                    <input type="text" name="rucak" class="form-control" ng-model="ishrana.rucak" placeholder="Ručak" />
+                    <br />
+
+                    <p>Večera: </p>
+                    <input type="text" name="veceras" class="form-control" ng-model="ishrana.vecera" placeholder="Večera" />
+                    <br />
+
+                    <p>Užina 1: </p>
+                    <input type="text" name="uzina1" class="form-control" ng-model="ishrana.uzina1" placeholder="Užina 1" />
+                    <br />
+
+                    <p>Užina 2: </p>
+                    <input type="text" name="uzina2" class="form-control" ng-model="ishrana.uzina2" placeholder="Užina 2" />
+                    <br />
+
+
+                </ng-form>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="dodajPlanIshrane(ishrana)">Dodaj</button>
+            <button class="btn btn-default" data-dismiss="modal" ng-click="otkaziIshrana()">Poništi</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

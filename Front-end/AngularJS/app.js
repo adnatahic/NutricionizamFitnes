@@ -38,6 +38,11 @@
                 templateUrl: "administratori/administratori.html",
                 controller: "administratoriCtrl"
             })
+             .when("/statistika",
+            {
+                templateUrl: "statistika/statistika.html",
+                controller: "statistikaCtrl"
+            })
             .otherwise({ redirectTo: "/login" });
 
         $httpProvider.defaults.headers.common = {};

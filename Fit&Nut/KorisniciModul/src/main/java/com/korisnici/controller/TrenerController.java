@@ -30,9 +30,6 @@ import com.korisnici.repository.KorisnikRepository;
 import com.korisnici.repository.OsobaRepository;
 import com.korisnici.repository.TrenerRepository;
 
-
-
-
 @SpringBootApplication
 @RestController
 @RequestMapping("/korisnici")

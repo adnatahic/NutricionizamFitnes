@@ -46,6 +46,8 @@ import org.json.JSONObject;
 public class OsobaController {
 	@Autowired
 	  private OsobaRepository repo;
+	@Autowired
+	private MailService mailer;
 	
 	@Bean
 	@LoadBalanced
@@ -190,5 +192,34 @@ public class OsobaController {
 		
 	    return new ResponseEntity("Nije pronadjena osoba sa zeljenim id-em!" , HttpStatus.NOT_FOUND);
 	  }
+	
+	@RequestMapping(value="/resetpassword/{email}",method = RequestMethod.POST)
+	public void resetPassword(@PathVariable  String email){
+		
+		List<Osoba> osobe = (List<Osoba>) repo.findAll();
+		Osoba osoba= new Osoba();
+		for(int i=0; i< osobe.size(); i++ )
+		{
+			if(osobe.get(i).getEmail().equals(email))
+			{
+				System.out.println(osobe.get(i).getEmail());
+				osoba.setEmail(email);
+				osoba.setIme( osobe.get(i).getIme() );
+			}
+		}
+		
+		System.out.println(email);
+		
+		if (osoba!=null) {
+			
+	       
+	        mailer.sendResetPasswordMail(email+".com","novipass");
+	        
+			//user.setPassword(urk.getValue());
+			//usersService.updateUser(header, user);
+			
+		}
+		
+	}
 	
 }

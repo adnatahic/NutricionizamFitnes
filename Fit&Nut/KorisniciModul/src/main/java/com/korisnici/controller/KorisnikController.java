@@ -70,8 +70,8 @@ public class KorisnikController {
 	    	if(o.getId()==id) 
 	    	{ 
 	    		RestTemplate rs= new RestTemplate();
-	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/osobe/izbrisi/{id}", String.class, id);
-	    		//String rez2= rs.getForObject("http://localhost:8083/statistika/osobe/izbrisi/{id}", String.class, id);
+	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/izbrisi/{id}", String.class, id);
+	    		String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/izbrisi/{id}", String.class, id);
 	    		repo.delete(o);
 	    		return new ResponseEntity("Uspješno izbrisan korisnik sa id-em: " + id, HttpStatus.OK);
 	    	}
@@ -79,9 +79,9 @@ public class KorisnikController {
 	    return new ResponseEntity("Nije pronađen korisnik sa id-em : " + id, HttpStatus.NOT_FOUND);
 	  }
 	
-	@RequestMapping(value="/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
+	@RequestMapping(value="/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
 	  public ResponseEntity<String> DodajKorisnika(@PathVariable String spol, @PathVariable Integer godine, @PathVariable Integer visina, 
-			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable String datumPristupa,
+			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti,
 			  @PathVariable Integer idTrener, @PathVariable Integer idOsoba) {
 		
 		List<Korisnik> korisnici= (List<Korisnik>) repo.findAll();
@@ -89,10 +89,10 @@ public class KorisnikController {
 		List<Trener> treneri= (List<Trener>) repot.findAll();
 		
 		
-		SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy"); 
-		Date datum = null;
+		SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd"); 
+		Date datum = new Date();
 		try {
-			datum = dt.parse(datumPristupa);
+			datum = dt.parse(datum.toString());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -143,11 +143,10 @@ public class KorisnikController {
 				vars.put("tezina", tezina.toString());
 				vars.put("zeljenaTezina", zeljenaTezina.toString());
 				vars.put("bolesti", bolesti);
-				vars.put("datumPristupa", datumPristupa.toString());
 				vars.put("idTrener",idTrener.toString());
 				vars.put("idOsoba", idOsoba.toString());
-	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
-	    		//String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", String.class, vars);
+	    		String rez= rs.getForObject("http://localhost:8082/planiprogram/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{idTrener}/{idOsoba}", String.class, vars);
+	    		String rez2= rs.getForObject("http://localhost:8083/statistika/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{idTrener}/{idOsoba}", String.class, vars);
 	    		repo.save(novi);
 				
 	    		return new ResponseEntity("Uspješno kreiran korisnik! " , HttpStatus.OK);

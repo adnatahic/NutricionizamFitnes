@@ -4,14 +4,13 @@
     <meta charset="utf-8" />
     <title>Nutricionizam</title>
     <base href="/">
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap_simplex.css">
     <!--<link rel="stylesheet" href="css/bootstrap_proba.css">-->
-
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/skeleton.css">
+
 
     <script src="libs/angular.min.js"></script>
     <script src="libs/angular-route.min.js"></script>
@@ -19,19 +18,20 @@
     <script src="libs/bootstrap.min.js"></script>
     <script src="libs/ngStorage.min.js"></script>
 
+
     <script src="app.js"></script>
     <script src="korisnici/korisniciCtrl.js"></script>
     <script src="treneri/treneriCtrl.js"></script>
     <script src="login/loginCtrl.js"></script>
     <script src="registracija/registracijaCtrl.js"></script>
     <script src="administratori/administratoriCtrl.js"></script>
-
+    <script src="statistika/statistikaCtrl.js"></script>
     <script src="korisnici/korisniciServis.js"></script>
     <script src="treneri/treneriServis.js"></script>
     <script src="login/loginServis.js"></script>
     <script src="registracija/registracijaServis.js"></script>
     <script src="administratori/administratoriServis.js"></script>
-    
+    <script src="statistika/statistikaServis.js"></script>
 
 </head>
 <body>
@@ -40,7 +40,7 @@
             <li><a href="#">Pocetna</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                    <strong>Svi korisnici</strong>
+                    <strong>Korisnici</strong>
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -49,10 +49,11 @@
                     <li><a href="#/administratori">Administratori</a></li>
                 </ul>
             </li>
-           
+            <li><a href="#/statistika">Statistika</a></li>
             <li><a href="#/login">Login</a></li>
             <li><a href="#/registracija">Registracija</a></li>
-            
+
+
         </ul>
         <a href="#" id="pull">Menu</a>
     </nav>

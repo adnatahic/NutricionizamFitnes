@@ -20,13 +20,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.csrf().disable().authorizeRequests()
+    .antMatchers(HttpMethod.POST, "/login").permitAll()
 //    			.antMatchers("/korisnici/osobe/dodaj/**").permitAll()
 //    			.antMatchers("/korisnici/administratori").hasAuthority("ADMIN")
 //    			.antMatchers("/korisnici/administratori/*").hasAuthority("ADMIN")
 //    			.antMatchers("/korisnici/korisnik/*").hasAuthority("ADMIN")
 //    		 	.antMatchers("/korisnici/treneri/*").hasAuthority("ADMIN")
     		 	.antMatchers("/korisnici/**").permitAll()
-        .antMatchers(HttpMethod.POST, "/login").permitAll()
         .anyRequest().authenticated()
         .and()
         // We filter the api/login requests

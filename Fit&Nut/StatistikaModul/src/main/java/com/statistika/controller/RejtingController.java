@@ -54,7 +54,7 @@ public class RejtingController {
 	
 	@RequestMapping(value="rejting/dodaj/{id_k}/{id_t}/{ocjena}", method=RequestMethod.GET)
 	  public ResponseEntity<Osoba> DodajRejting(@PathVariable int id_k, @PathVariable int id_t,@PathVariable int ocjena) {
-	    List<Rejting> osobe= (List<Rejting>) repo.findAll();
+	    List<Rejting> rejtinzi= (List<Rejting>) repo.findAll();
 	    
 	    List<Trener> treneri= (List<Trener>) repot.findAll();
 	    List<Korisnik> korisnici= (List<Korisnik>) repok.findAll();
@@ -80,6 +80,7 @@ public class RejtingController {
 	    
 	    if(k.getKorisnik()!=null && k.getTrener()!=null && ocjena>0)
 	    {
+	    	k.setId(rejtinzi.get(rejtinzi.size()-1).getId()+1) ;
 	    	repo.save(k);
 	    	return new ResponseEntity("Uspješno ocjenjen trener!" , HttpStatus.OK);
 	    }

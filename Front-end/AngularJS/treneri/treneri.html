@@ -1,41 +1,58 @@
-﻿<div>
+﻿
+<div>
     <div class="container">
         <div class="featured-block">
             <br />
-            <h2><i class="fa fa-cogs"></i> Treneri</h2>
+            <br />
+            <br />
+
+            <h2>
+                <i class="fa fa-th-list"></i>
+
+                Treneri 
+                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#dodajNovogTrenera" data-ng-init="izlistajSveOsobe()" >Dodaj novog</button>
+                <br />
+
+            </h2>
             <br />
             <br />
             <br />
-            <div data-ng-controller="treneriCtrl" data-ng-init="izlistajSveTrenere()" class="row">
-                <div class="col-md-3" ng-repeat="trener in listaTrenera">
-                    <div class="grid_4">
-                        <div class="banner">
-                            <i class="fa fa-female fa-5x" style="padding-left:38%" ng-show="trener.spol === 'zensko'"></i>
-                            <i class="fa fa-male fa-5x" style="padding-left:38%" ng-show="trener.spol === 'musko'"></i>
-                            <p class="label">
-                            <p>{{trener.osoba.ime}} {{trener.osoba.prezime}}</p>
-                            <p>{{trener.godine}}&nbsp;godina</p>
-                            <p>{{trener.edukacija}}</p>
-                            <p>{{trener.iskustvo}} godina iskustva</p>
-                            <p>Ukupno {{trener.brojKlijenata}} zadovoljnih klijenata</p>
-                            <a class="btn" data-toggle="modal" data-target="#izmijeniTrenera" ng-click="selektujTrenera(trener)"><b>Izmijeni</b></a>
-                            <br /><br /><br />
+
+
+            <div class="row" data-ng-init="izlistajSveTrenere()">
+
+               
+                <div class="col-md-3" ng-repeat="korisnik in listaTrenera">
+                    <div class="block">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <i class="fa fa-female fa-5x" style="padding-left:38%" ng-show="korisnik.spol === 'zensko'"></i>
+                                <i class="fa fa-male fa-5x" style="padding-left:38%" ng-show="korisnik.spol === 'musko'"></i>
+                                <p>Ime: {{korisnik.osoba.ime}}</p>
+                                <p>Prezime: {{korisnik.osoba.prezime}}</p>
+                                <p>Godine: {{korisnik.godine}}</p>
+                                <p>Edukacija: {{korisnik.edukacija}}</p>
+                                <p>Iskustvo: {{korisnik.iskustvo}}</p>
+                                <p>Broj klijenata: {{korisnik.brojKlijenata}}</p>
+                                <a class="btn btn-info btn-primary" data-toggle="modal" data-target="#izmijenitrenera" ng-click="selektujTrenera(korisnik)">Uredi trenera</a>
+                                <a class="btn btn-info btn-primary" ng-click="izbrisiTrenera(korisnik.id)">Izbrisi trenera</a>
+                           </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
         </div>
+        <div class="ruler"></div>
     </div>
-    <p ng-model="message"></p>
-    &nbsp;&nbsp;
-    <button class="button" data-toggle="modal" data-target="#sveOsobe" ng-click="izlistajSveOsobe()">&nbsp;&nbsp;Dodaj trenera&nbsp;&nbsp;</button>
-
 </div>
-<div class="ruler"></div>
 
-<div id="sveOsobe" class="modal fade" role="dialog">
-    <div ng-include="'treneri/sveOsobe.html'"></div>
-</div>
-<div id="izmijeniTrenera" class="modal fade" role="dialog">
+<div id="izmijenitrenera" class="modal fade" role="dialog">
     <div ng-include="'treneri/izmijeniTrenera.html'"></div>
+</div>
+<div id="dodajNovogTrenera" class="modal fade" role="dialog">
+    <div ng-include="'treneri/dodajTrenera.html'"></div>
 </div>

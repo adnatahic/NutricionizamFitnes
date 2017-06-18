@@ -6,7 +6,7 @@
         $scope.korisnici =
         [
             {
-              
+
             }
         ];
 
@@ -25,7 +25,7 @@
         $scope.korisnik =
         {
             id: "",
-            bolesti:"",
+            bolesti: "",
             datumPristupa: "",
             godine: "",
             spol: "",
@@ -55,26 +55,26 @@
                     username: ""
                 }
             }
-           
+
         };
 
         $scope.treneri =
             [
                 {
-                id: "",
-                brojKlijenata: "",
-                edukacija: "",
-                godine: "",
-                iskustvo: "",
-                spol: "",
-                osoba:  {
                     id: "",
-                    email: "",
-                    ime: "",
-                    password: "",
-                    prezime: "",
-                    username: ""
-                        }
+                    brojKlijenata: "",
+                    edukacija: "",
+                    godine: "",
+                    iskustvo: "",
+                    spol: "",
+                    osoba: {
+                        id: "",
+                        email: "",
+                        ime: "",
+                        password: "",
+                        prezime: "",
+                        username: ""
+                    }
                 }
             ];
 
@@ -95,7 +95,7 @@
                     username: ""
                 }
             };
-      
+
         $scope.trening =
             {
 
@@ -139,6 +139,50 @@
                 }
             };
 
+        $scope.ishrana =
+           {
+               id: "",
+               dorucak: "",
+               rucak: "",
+               uzina1: "",
+               uzina2: "",
+               vecera: "",
+               korisnik: {
+                   id: 1,
+                   bolesti: "",
+                   datumPristupa: "",
+                   godine: "",
+                   spol: "",
+                   tezina: "",
+                   visina: "",
+                   zeljenaTezina: "",
+                   osoba: {
+                       id: "",
+                       email: "",
+                       ime: "",
+                       password: "",
+                       prezime: "",
+                       username: ""
+                   },
+                   trener: {
+                       id: "",
+                       brojKlijenata: "",
+                       edukacija: "",
+                       godine: "",
+                       iskustvo: "",
+                       spol: "",
+                       osoba: {
+                           id: "",
+                           email: "",
+                           ime: "",
+                           password: "",
+                           prezime: "",
+                           username: ""
+                       }
+                   }
+               }
+           };
+
         $scope.selektuj = function (korisnik) {
             $scope.odabrani = korisnik;
         }
@@ -149,7 +193,7 @@
             + $scope.korisnik.bolesti + "/"
             + $scope.korisnik.trener.id + "/"
             + $scope.korisnik.osoba.id;
-            korisniciServis.list(urlkorisnik, 
+            korisniciServis.list(urlkorisnik,
                 function (data) {
                     if (data) {
                         alert("proslo");
@@ -158,15 +202,16 @@
         }
 
 
-        $scope.planiprogram = function (korisnik) {
-            
-            $scope.trening.korisnik = korisnik;
-            $window.location.href = '#/planiprogram';
+        $scope.planiprogram = function (neki_korisnik) {
+
+            $scope.korisnik_trener = neki_korisnik;
+            $scope.trening.korisnik = neki_korisnik;
+
         }
 
         $scope.dodajPlaniprogram = function (korisnik) {
             $scope.trening = korisnik;
-            urlkorisnik = "korisnik/trening/" + $scope.trening.korisnik.id + "/"
+            urlkorisnik = "treninzi/dodaj/" + $scope.trening.korisnik.id + "/"
             + $scope.trening.trajanje + "/"
             + $scope.trening.vrsta + "/"
             + $scope.trening.opis;
@@ -199,9 +244,32 @@
 
         $scope.otkazi = function (korisnik) {
             $scope.odabrani = null;
+            $scope.ishrana = null;
+            
 
         }
 
+
+        $scope.ishranaFun = function (korisnik) {
+            $scope.ishrana.korisnik = korisnik;
+        }
+
+
+        $scope.dodajPlanIshrane = function (ishrana) {
+            $scope.ishrana = ishrana;
+
+            urlkorisnik = "ishrana/dodaj/" + $scope.ishrana.dorucak + "/" + $scope.ishrana.rucak
+                + "/" + $scope.ishrana.vecera + "/"
+                + $scope.ishrana.uzina1 + "/" + $scope.ishrana.uzina2 + "/" + $scope.ishrana.korisnik.id;
+            korisniciServis.listapp(urlkorisnik,
+                function (data) {
+                    alert("Uspješno kreiran plan ishrane!");
+                    if (data) {
+                        alert("Uspješno dodan plan ishrane!");
+                        $window.location.href = '#/korisnici';
+                    }
+                });
+        }
 
         $scope.otkaziKorisnici = function () {
             $scope.korisnik = null;
@@ -234,30 +302,30 @@
             $window.location.href = '#/korisnici';
 
         };
-            $scope.init2 = function () {
-                korisniciServis.list("treneri/svi",
-                    function (data) {
-                        if (data) {
-                            $scope.treneri = data;
-                        }
-                    });
+        $scope.init2 = function () {
+            korisniciServis.list("treneri/svi",
+                function (data) {
+                    if (data) {
+                        $scope.treneri = data;
+                    }
+                });
 
-                korisniciServis.list("osobe/svi",
-                    function (data) {
-                        if (data) {
-                            $scope.osobe = data;
-                        }
-                    });
-           
-            
-            };
+            korisniciServis.list("osobe/svi",
+                function (data) {
+                    if (data) {
+                        $scope.osobe = data;
+                    }
+                });
 
-            $scope.ucitajDodajNovog = function () {
-                
-                    
-                $window.location.href = '#/dodajNovogKorisnika';
 
-            };
+        };
+
+        $scope.ucitajDodajNovog = function () {
+            s
+
+            $window.location.href = '#/dodajNovogKorisnika';
+
+        };
 
     }]);
 }());

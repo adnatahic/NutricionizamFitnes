@@ -1,0 +1,68 @@
+﻿
+<div>
+    <div class="container">
+        <div class="featured-block">
+            <br />
+            <br />
+            <br />
+
+            <table class="table">
+                <tr>
+                    <th>
+                        <h2>
+                            <i class="fa fa-th-list"></i>
+                            Ocjene korisnika
+                            <!--<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#dodajNovogTrenera" data-ng-init="izlistajSveOsobe()">Dodaj novog</button>-->
+                            <br />
+
+                        </h2>
+                    </th>
+                    <th>
+                        <br />
+                        <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+                                Filtriraj po
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><input type="text" class="form-control" ng-model="search.ocjena" placeholder="Pretraži po ocjeni"></li>
+                                <li><input type="text" class="form-control" ng-model="search.trener.osoba.ime" placeholder="Pretraži po imenu trenera"></li>
+                                <li><input type="text" class="form-control" ng-model="search.korisnik.osoba.ime" placeholder="Pretraži po imenu korisnika"></li>
+                            </ul>
+                        </div>
+
+                    </th>
+
+                </tr>
+
+            </table>
+            <br />
+
+            <div class="row" data-ng-init="init()">
+                <br /> <br />  <br />
+
+                <div class="col-md-3" ng-repeat="element in listaRejtinga|filter:search ">
+                    <div class="block">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <p> <b>Korisnik </b> {{element.korisnik.osoba.ime}}  {{element.korisnik.osoba.prezime}} <b>ocijenio trenera </b> {{element.trener.osoba.ime}} {{element.trener.osoba.prezime}} <b> ocjenom: </b> </p>
+                                <div star-rating rating-value="element.ocjena" readonly="true" max="5"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-info btn-primary" data-toggle="modal" data-target="#ocijeniTrenera" ng-click="ucitajPotrebno()">Ocijeni trenera</a>
+        </div>
+        <div class="ruler"></div>
+    </div>
+</div>
+
+<div id="ocijeniTrenera" class="modal fade" role="dialog">
+    <div ng-include="'statistika/ocijeniTrenera.html'"></div>
+</div>
+<div id="dodajNovogTrenera" class="modal fade" role="dialog">
+    <div ng-include="'treneri/dodajTrenera.html'"></div>
+</div>

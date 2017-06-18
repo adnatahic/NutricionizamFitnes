@@ -74,9 +74,9 @@ public class KorisnikController {
 	    return new ResponseEntity("Nije pronađen korisnik sa id-em : " + id, HttpStatus.NOT_FOUND);
 	  }
 	
-	@RequestMapping(value="/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{datumPristupa}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
+	@RequestMapping(value="/korisnik/dodaj/{spol}/{godine}/{visina}/{tezina}/{zeljenaTezina}/{bolesti}/{idTrener}/{idOsoba}", method=RequestMethod.GET)
 	  public ResponseEntity<String> DodajKorisnika(@PathVariable String spol, @PathVariable Integer godine, @PathVariable Integer visina, 
-			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti, @PathVariable String datumPristupa,
+			  @PathVariable Integer tezina, @PathVariable Integer zeljenaTezina, @PathVariable String bolesti,
 			  @PathVariable Integer idTrener, @PathVariable Integer idOsoba) {
 		
 		List<Korisnik> korisnici= (List<Korisnik>) repo.findAll();
@@ -84,14 +84,15 @@ public class KorisnikController {
 		List<Trener> treneri= (List<Trener>) repot.findAll();
 		
 		
-		SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd"); 
-		Date datum = null;
-		try {
-			datum = dt.parse(datumPristupa);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+	SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd"); 
+	Date datum = new Date();
+	try {
+		datum = dt.parse(datum.toString());
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} 
+	
 		
 		
 		for(Korisnik k: korisnici)
@@ -138,7 +139,7 @@ public class KorisnikController {
 				vars.put("tezina", tezina.toString());
 				vars.put("zeljenaTezina", zeljenaTezina.toString());
 				vars.put("bolesti", bolesti);
-				vars.put("datumPristupa", datumPristupa.toString());
+				vars.put("datumPristupa", datum.toString());
 				vars.put("idTrener",idTrener.toString());
 				vars.put("idOsoba", idOsoba.toString());
 				repo.save(novi);
