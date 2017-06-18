@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     			.antMatchers("/korisnici/administratori/*").hasAuthority("ADMIN")
     			.antMatchers("/korisnici/korisnik/*").hasAuthority("ADMIN")
     		 	.antMatchers("/korisnici/treneri/*").hasAuthority("ADMIN")
-    		 	.antMatchers("/korisnici/**").permitAll()
+    		 	//.antMatchers("/korisnici/**").permitAll()
         .anyRequest().authenticated()
         .and()
         // We filter the api/login requests
